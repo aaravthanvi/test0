@@ -206,7 +206,7 @@ const mainMenu = document.getElementById('main-menu');
 const categoriesSection = document.getElementById('categories');
 const authorsSection = document.getElementById('authors');
 const authorsGrid = document.getElementById('authors-grid');
-const journeysSection = document.getElementById('journeys');
+const philosophySection = document.getElementById('philosophy');
 const quoteSection = document.getElementById('quote-section');
 const quoteText = document.getElementById('quote-text');
 const quoteAuthor = document.getElementById('quote-author');
@@ -218,6 +218,7 @@ const shareBtn = document.getElementById('share-btn');
 const voiceBtn = document.getElementById('voice-btn');
 const storyCardBtn = document.getElementById('story-card-btn');
 const categoryButtons = document.querySelectorAll('.category-btn');
+const philosophyButtons = document.querySelectorAll('.philosophy-btn');
 const journeyCards = document.querySelectorAll('.journey-card');
 const settingsBtn = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
@@ -227,10 +228,10 @@ const languageSelect = document.getElementById('language-select');
 const installBtn = document.getElementById('install-btn');
 const browseCategoriesBtn = document.getElementById('browse-categories-btn');
 const browseAuthorsBtn = document.getElementById('browse-authors-btn');
-const browseJourneysBtn = document.getElementById('browse-journeys-btn');
+const browsePhilosophyBtn = document.getElementById('browse-philosophy-btn');
 const backToMenuFromCategories = document.getElementById('back-to-menu-from-categories');
 const backToMenuFromAuthors = document.getElementById('back-to-menu-from-authors');
-const backToMenuFromJourneys = document.getElementById('back-to-menu-from-journeys');
+const backToMenuFromPhilosophy = document.getElementById('back-to-menu-from-philosophy');
 const journeyProgressContainer = document.getElementById('journey-progress-container');
 const journeyTitle = document.getElementById('journey-title');
 const journeyStep = document.getElementById('journey-step');
@@ -272,7 +273,8 @@ const categoryKeywords = {
     'change': ['change', 'transform', 'grow', 'evolve', 'adapt', 'different'],
     'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
     'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
-    'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax']
+    'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
+    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
 };
 
 const journeyDefinitions = {
@@ -1273,7 +1275,7 @@ function showQuoteSection() {
     mainMenu.classList.add('hidden');
     categoriesSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
-    journeysSection.classList.add('hidden');
+    philosophySection.classList.add('hidden');
     quoteSection.classList.remove('hidden');
     quoteSection.classList.add('fade-enter');
     backBtn.focus();
@@ -1284,7 +1286,7 @@ function showMainMenu() {
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
-    journeysSection.classList.add('hidden');
+    philosophySection.classList.add('hidden');
     mainMenu.classList.remove('hidden');
     
     journeyProgressContainer.classList.add('hidden');
@@ -1302,7 +1304,7 @@ function showCategoriesSection() {
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
-    journeysSection.classList.add('hidden');
+    philosophySection.classList.add('hidden');
     categoriesSection.classList.remove('hidden');
 }
 
@@ -1311,7 +1313,7 @@ function showAuthorsSection() {
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
-    journeysSection.classList.add('hidden');
+   philosophySection.classList.add('hidden');
     authorsSection.classList.remove('hidden');
     
     if (allQuotes.length > 0) {
@@ -1326,14 +1328,14 @@ function showAuthorsSection() {
 
 
 
-function showJourneysSection() {
-    document.getElementById('bellBtn').style.display = 'none';
+function showPhilosophySection() {
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
-    journeysSection.classList.remove('hidden');
+    philosophySection.classList.remove('hidden');
 }
+
 
 function toggleSettings() {
     settingsPanel.classList.toggle('open');
@@ -1476,10 +1478,10 @@ document.addEventListener('keydown', (e) => {
 
 browseCategoriesBtn.addEventListener('click', showCategoriesSection);
 browseAuthorsBtn.addEventListener('click', showAuthorsSection);
-browseJourneysBtn.addEventListener('click', showJourneysSection);
+browsePhilosophyBtn.addEventListener('click', showPhilosophySection);
 backToMenuFromCategories.addEventListener('click', showMainMenu);
 backToMenuFromAuthors.addEventListener('click', showMainMenu);
-backToMenuFromJourneys.addEventListener('click', showMainMenu);
+backToMenuFromPhilosophy.addEventListener('click', showMainMenu);
 
 categoryButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -1495,6 +1497,22 @@ categoryButtons.forEach((button) => {
         }
     });
 });
+
+philosophyButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        currentCategory = button.getAttribute('data-philosophy');
+        currentAuthor = '';
+        loadShownQuotes();
+        showQuoteSection();
+        
+        if (allQuotes.length > 0) {
+            showQuoteFromCategory();
+        } else {
+            fetchAllQuotes();
+        }
+    });
+});
+
 
 journeyCards.forEach((card) => {
     card.addEventListener('click', () => {
