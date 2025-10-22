@@ -4,240 +4,1005 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Primary Meta Tags -->
     <title>Quote Galaxy - Inspirational Quotes from Around the World</title>
     <meta name="title" content="Quote Galaxy - Inspirational Quotes from Around the World">
     <meta name="description" content="Explore 1000+ inspirational quotes across 11 categories including Life, Love, Success, Wisdom, Peace. Get daily motivation with beautiful themes and multilingual support.">
     <meta name="keywords" content="quotes, inspirational quotes, motivational quotes, wisdom, life quotes, success quotes, daily quotes, peace quotes, calm quotes">
     <meta name="author" content="Aarav Thaanvi">
     
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aaravthanvi.github.io/">
+    <meta property="og:url" content="https://aaravthanvi.github.io/quotes/">
     <meta property="og:title" content="Quote Galaxy - Inspirational Quotes">
-    <meta property="og:description" content="Explore wisdom from around the world with 1000+ inspirational quotes">
-    <meta property="og:image" content="icons/app-512.png">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aaravthanvi.github.io/">
-    <meta property="twitter:title" content="Quote Galaxy - Inspirational Quotes">
-    <meta property="twitter:description" content="Explore wisdom from around the world">
-    <meta property="twitter:image" content="icons/app-512.png">
-
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3b82f6">
-    <link rel="apple-touch-icon" href="icons/app-192.png">
+    <meta property="og:description" content="Explore wisdom from around the world with 1000+ inspirational quotes across 11 categories. Beautiful themes, multilingual support, and daily motivation.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a0a0f/3b82f6?text=Quote+Galaxy+-+Inspirational+Quotes">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
-    <link rel="stylesheet" href="style.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aaravthanvi.github.io/quotes/">
+    <meta property="twitter:title" content="Quote Galaxy - Inspirational Quotes">
+    <meta property="twitter:description" content="Explore wisdom from around the world with 1000+ inspirational quotes across 11 categories.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a0f/3b82f6?text=Quote+Galaxy+-+Inspirational+Quotes">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quote Galaxy">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="icons/favicon-16.png" sizes="16x16" type="image/png">
+    
+    <!-- iOS Home Screen -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33K7BP8J85"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-33K7BP8J85');
+</script>
+
+    <style>
+    [data-theme="spring"] .theme-btn:not(.active),
+    [data-theme="spring"] .seasonal-btn:not(.active),
+    [data-theme="summer"] .theme-btn:not(.active),
+    [data-theme="summer"] .seasonal-btn:not(.active),
+    [data-theme="winter"] .theme-btn:not(.active),
+    [data-theme="winter"] .seasonal-btn:not(.active) {
+    color: #111111 !important;
+    opacity: 1 !important;
+}
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Quote Galaxy",
+      "url": "https://aaravthanvi.github.io/quotes/",
+      "description": "Explore 1000+ inspirational quotes across 11 categories including Life, Love, Success, Wisdom, Peace",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Aarav Thaanvi"
+      },
+      "inLanguage": ["en", "hi", "es", "fr", "de", "ja", "zh"]
+    }
+    </script>
     
     <style>
-        .notification-bell {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+        * { 
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: rgba(255, 255, 255, 0.05);
+            --bg-hover: rgba(255, 255, 255, 0.10);
+            --border-color: rgba(255, 255, 255, 0.15);
+            --text-primary: #f3f4f6;
+            --text-secondary: #a8b3c1;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+        
+        [data-theme="vscode-dark"] {
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #252526;
+            --bg-hover: #2d2d30;
+            --border-color: #3e3e42;
+            --text-primary: #d4d4d4;
+            --text-secondary: #808080;
+            --accent-color: #007acc;
+            --accent-hover: #005a9e;
+        }
+        
+        [data-theme="monokai"] {
+            --bg-primary: #272822;
+            --bg-secondary: #3e3d32;
+            --bg-hover: #49483e;
+            --border-color: #8f8a6e;
+            --text-primary: #f8f8f2;
+            --text-secondary: #8f8a6e;
+            --accent-color: #a6e22e;
+            --accent-hover: #8fc720;
+        }
+        
+        [data-theme="nord"] {
+            --bg-primary: #2e3440;
+            --bg-secondary: #3b4252;
+            --bg-hover: #434c5e;
+            --border-color: #4c566a;
+            --text-primary: #eceff4;
+            --text-secondary: #d8dee9;
+            --accent-color: #88c0d0;
+            --accent-hover: #81a1c1;
+        }
+        
+        [data-theme="dracula"] {
+            --bg-primary: #282a36;
+            --bg-secondary: #44475a;
+            --bg-hover: #6272a4;
+            --border-color: #6272a4;
+            --text-primary: #f8f8f2;
+            --text-secondary: #6272a4;
+            --accent-color: #bd93f9;
+            --accent-hover: #ff8fd1;
+        }
+        
+        [data-theme="github-dark"] {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-hover: #21262d;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-hover: #1f6feb;
+        }
+        
+        [data-theme="solarized-dark"] {
+            --bg-primary: #002b36;
+            --bg-secondary: #073642;
+            --bg-hover: #094656;
+            --border-color: #586e75;
+            --text-primary: #93a5a8;
+            --text-secondary: #7a9199;
+            --accent-color: #2aa198;
+            --accent-hover: #268bd2;
+        }
+        
+        [data-theme="spring"] {
+            --bg-primary: #f0f9ff;
+            --bg-secondary: #e0f2fe;
+            --bg-hover: #bae6fd;
+            --border-color: #7dd3fc;
+            --text-primary: #083d5a;
+            --text-secondary: #054361;
+            --accent-color: #16a34a;
+            --accent-hover: #15803d;
+        }
+        
+        [data-theme="summer"] {
+            --bg-primary: #fffbeb;
+            --bg-secondary: #fef3c7;
+            --bg-hover: #fde68a;
+            --border-color: #fcd34d;
+            --text-primary: #5e2809;
+            --text-secondary: #6e2f0a;
+            --accent-color: #f59e0b;
+            --accent-hover: #d97706;
+        }
+        
+        [data-theme="autumn"] {
+            --bg-primary: #1c1917;
+            --bg-secondary: #292524;
+            --bg-hover: #44403c;
+            --border-color: #57534e;
+            --text-primary: #fafaf9;
+            --text-secondary: #d6d3d1;
+            --accent-color: #fb923c;
+            --accent-hover: #f97316;
+        }
+        
+        [data-theme="winter"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-hover: #e2e8f0;
+            --border-color: #cbd5e1;
+            --text-primary: #0f172a;
+            --text-secondary: #3f4d5e;
+            --accent-color: #0ea5e9;
+            --accent-hover: #0284c7;
+        }
+        
+        [data-theme="rainbow"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-hover: #404040;
+            --border-color: #666;
+            --text-primary: #fff;
+            --text-secondary: #ccc;
+            --accent-color: #ff6b6b;
+            --accent-hover: #ee5a6f;
+            background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf);
+            background-size: 400% 400%;
+            animation: rainbowShift 15s ease infinite;
+        }
+        
+        [data-theme="rainbow"] #quote-text,
+        [data-theme="rainbow"] #quote-author,
+        [data-theme="rainbow"] .text-primary {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        [data-theme="matrix"] {
+            --bg-primary: #000000;
+            --bg-secondary: #0d0d0d;
+            --bg-hover: #1a1a1a;
+            --border-color: #00ff00;
+            --text-primary: #00ff00;
+            --text-secondary: #008800;
+            --accent-color: #00ff00;
+            --accent-hover: #00cc00;
+        }
+        
+        [data-theme="retro"] {
+            --bg-primary: #fef9c7;
+            --bg-secondary: #fdf0aa;
+            --bg-hover: #fce896;
+            --border-color: #8b7355;
+            --text-primary: #5d4037;
+            --text-secondary: #795548;
+            --accent-color: #b8320f;
+            --accent-hover: #9e2a0d;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @keyframes rainbowShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .bg-secondary {
+            background-color: var(--bg-secondary);
+        }
+        
+        .bg-hover:hover {
+            background-color: var(--bg-hover);
+        }
+        
+        .border-custom {
+            border-color: var(--border-color);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        .accent-color {
+            color: var(--accent-color);
+        }
+        
+        .accent-bg {
+            background-color: var(--accent-color);
+        }
+        
+        .accent-bg:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        #zen-canvas {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        #zen-canvas.active {
+            opacity: 1;
+        }
+        
+        section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        *:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        .fade-enter { 
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-badge {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+        
+        .category-badge:hover::before,
+        .category-badge:focus::before {
+            left: 100%;
+        }
+        
+        .quote-reveal {
+            animation: quoteReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @keyframes quoteReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .status-badge {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .status-badge:hover {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+        
+        .settings-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--bg-secondary);
+            border-left: 1px solid var(--border-color);
+            transition: right 0.3s ease;
             z-index: 1000;
-            font-size: 24px;
-            cursor: pointer;
-            background: rgba(59, 130, 246, 0.2);
-            padding: 10px 15px;
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
+            overflow-y: auto;
+        }
+        
+        .settings-panel.open {
+            right: 0;
+        }
+        
+        .kbd {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            color: var(--text-secondary);
+        }
+        
+        @keyframes voicePulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .voice-active {
+            animation: voicePulse 1.5s ease-in-out infinite;
+        }
+        
+        .journey-progress {
+            position: relative;
+            height: 4px;
+            background-color: var(--bg-secondary);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .journey-progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        #story-card-preview {
+            max-width: 360px;
+            aspect-ratio: 9/16;
+            border-radius: 12px;
+            overflow: hidden;
         }
     </style>
 </head>
-<body>
-    <div class="notification-bell" onclick="showNotification()">🔔</div>
+<body class="min-h-screen">
 
-    <div class="container">
-        <div id="menu">
-            <div class="header">
-                <h1 class="title" data-translate="title">Quote Galaxy</h1>
-                <p class="subtitle" data-translate="subtitle">Explore wisdom from around the world</p>
-                
-                <div class="language-selector">
-                    <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">🇬🇧 EN</button>
-                    <button onclick="changeLanguage('hi')" class="lang-btn" data-lang="hi">🇮🇳 HI</button>
-                    <button onclick="changeLanguage('es')" class="lang-btn" data-lang="es">🇪🇸 ES</button>
-                    <button onclick="changeLanguage('fr')" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
-                    <button onclick="changeLanguage('de')" class="lang-btn" data-lang="de">🇩🇪 DE</button>
-                    <button onclick="changeLanguage('it')" class="lang-btn" data-lang="it">🇮🇹 IT</button>
-                    <button onclick="changeLanguage('pt')" class="lang-btn" data-lang="pt">🇵🇹 PT</button>
-                    <button onclick="changeLanguage('ar')" class="lang-btn" data-lang="ar">🇸🇦 AR</button>
-                    <button onclick="changeLanguage('ja')" class="lang-btn" data-lang="ja">🇯🇵 JA</button>
-                    <button onclick="changeLanguage('zh')" class="lang-btn" data-lang="zh">🇨🇳 ZH</button>
-                    <button onclick="changeLanguage('ko')" class="lang-btn" data-lang="ko">🇰🇷 KO</button>
-                    <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">🇷🇺 RU</button>
-                </div>
+    <!-- Zen Background Canvas -->
+    <canvas id="zen-canvas"></canvas>
+
+    <!-- Settings Button (Fixed) -->
+    <button id="settings-btn" tabindex="1" class="fixed top-4 right-4 z-50 bg-secondary border-custom border rounded-lg p-3 bg-hover focus:ring-2" title="Settings (S)" aria-label="Open Settings">
+        <i class="fas fa-cog text-xl"></i>
+    </button>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="settings-panel" role="dialog" aria-labelledby="settings-title">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 id="settings-title" class="text-2xl font-bold">Settings</h2>
+                <button id="close-settings" tabindex="2" class="text-secondary hover:text-primary" aria-label="Close Settings">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
             </div>
-
-            <div class="menu-grid">
-                <div class="menu-card" onclick="showSection('categories')">
-                    <div class="card-icon">📚</div>
-                    <h2>Browse Categories</h2>
-                    <p>Explore quotes by theme</p>
-                </div>
-
-                <div class="menu-card" onclick="showSection('authors')">
-                    <div class="card-icon">✍️</div>
-                    <h2>Browse Authors</h2>
-                    <p>Discover quotes by author</p>
-                </div>
-
-                <div class="menu-card" onclick="showSection('philosophy')">
-                    <div class="card-icon">🏛️</div>
-                    <h2>Browse Philosophy</h2>
-                    <p>Explore philosophical wisdom</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="categories" class="hidden">
-            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
-            <h2 class="section-title">Quote Categories</h2>
             
-            <div class="category-grid" id="category-cards">
-                <div class="category-card" data-category="all">
-                    <div class="card-icon">🌟</div>
-                    <h3 data-translate="cat-all">All Quotes</h3>
-                    <p>Every inspiring quote</p>
+            <!-- Zen Background Toggle -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Zen Background</h3>
+                <div class="flex items-center justify-between bg-secondary border-custom border rounded-lg p-3">
+                    <span class="text-sm">Enable calming animations</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="zen-toggle" class="sr-only peer">
+                        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
                 </div>
-
-                <div class="category-card" data-category="life">
-                    <div class="card-icon">🌱</div>
-                    <h3 data-translate="cat-life">Life</h3>
-                    <p>Wisdom about living</p>
-                </div>
-
-                <div class="category-card" data-category="love">
-                    <div class="card-icon">❤️</div>
-                    <h3 data-translate="cat-love">Love</h3>
-                    <p>Quotes on love & relationships</p>
-                </div>
-
-                <div class="category-card" data-category="success">
-                    <div class="card-icon">🏆</div>
-                    <h3 data-translate="cat-success">Success</h3>
-                    <p>Achieve your goals</p>
-                </div>
-
-                <div class="category-card" data-category="inspire">
-                    <div class="card-icon">✨</div>
-                    <h3 data-translate="cat-inspire">Inspiration</h3>
-                    <p>Get motivated daily</p>
-                </div>
-
-                <div class="category-card" data-category="wisdom">
-                    <div class="card-icon">🦉</div>
-                    <h3 data-translate="cat-wisdom">Wisdom</h3>
-                    <p>Deep life lessons</p>
-                </div>
-
-                <div class="category-card" data-category="time">
-                    <div class="card-icon">⏰</div>
-                    <h3 data-translate="cat-time">Time</h3>
-                    <p>Value every moment</p>
-                </div>
-
-                <div class="category-card" data-category="change">
-                    <div class="card-icon">🔄</div>
-                    <h3 data-translate="cat-change">Change</h3>
-                    <p>Embrace transformation</p>
-                </div>
-
-                <div class="category-card" data-category="mind">
-                    <div class="card-icon">🧠</div>
-                    <h3 data-translate="cat-mind">Mind</h3>
-                    <p>Mental strength & clarity</p>
-                </div>
-
-                <div class="category-card" data-category="dream">
-                    <div class="card-icon">💭</div>
-                    <h3 data-translate="cat-dream">Dreams</h3>
-                    <p>Follow your aspirations</p>
-                </div>
-
-                <div class="category-card" data-category="peace">
-                    <div class="card-icon">☮️</div>
-                    <h3 data-translate="cat-peace">Peace</h3>
-                    <p>Find inner calm</p>
+                <select id="zen-style" class="w-full mt-2 bg-secondary border-custom border rounded-lg p-2 text-sm">
+                    <option value="particles">Floating Particles</option>
+                    <option value="waves">Gentle Waves</option>
+                    <option value="circles">Zen Circles</option>
+                </select>
+            </div>
+            
+            <!-- Theme Selection -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Theme</h3>
+                <div class="grid grid-cols-2 gap-2">
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="vscode-dark" tabindex="3">VS Code Dark</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="monokai" tabindex="4">Monokai</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="nord" tabindex="5">Nord</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="dracula" tabindex="6">Dracula</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="github-dark" tabindex="7">GitHub Dark</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="solarized-dark" tabindex="8">Solarized Dark</button>
                 </div>
             </div>
-        </div>
-
-        <div id="authors" class="hidden">
-            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
-            <h2 class="section-title">Browse by Author</h2>
-            <div class="author-grid" id="author-cards"></div>
-        </div>
-
-        <div id="philosophy" class="hidden">
-            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
-            <h2 class="section-title">Philosophy</h2>
             
-            <div class="category-grid" id="philosophy-cards">
-                <div class="category-card" data-category="stoicism">
-                    <div class="card-icon">🏛️</div>
-                    <h3>Stoicism</h3>
-                    <p>Ancient wisdom on virtue, resilience & inner peace</p>
+            <!-- Seasonal Themes -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Seasonal</h3>
+                <div class="grid grid-cols-2 gap-2">
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="spring" tabindex="9">🌸 Spring</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="summer" tabindex="10">☀️ Summer</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="autumn" tabindex="11">🍂 Autumn</button>
+                    <button class="theme-btn bg-secondary border-custom border rounded-lg p-3 text-sm bg-hover" data-theme="winter" tabindex="12">❄️ Winter</button>
                 </div>
             </div>
-        </div>
-
-        <div id="quote-section" class="hidden">
-            <button class="back-btn" onclick="showSection('categories')" data-translate="back">← Back</button>
             
-            <div class="quote-container">
-                <div class="quote-card">
-                    <p class="quote-text" id="quote-text"></p>
-                    <p class="quote-author" id="quote-author"></p>
-                    <p class="quote-counter" id="quote-counter"></p>
+            <!-- Language Selection -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Language</h3>
+                <select id="language-select" tabindex="13" class="w-full bg-secondary border-custom border rounded-lg p-3 text-sm">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="es">Español (Spanish)</option>
+                    <option value="fr">Français (French)</option>
+                    <option value="de">Deutsch (German)</option>
+                    <option value="ja">日本語 (Japanese)</option>
+                    <option value="zh">中文 (Chinese)</option>
+                </select>
+            </div>
+            
+            <!-- Keyboard Shortcuts -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Keyboard Shortcuts</h3>
+                <div class="space-y-2 text-sm text-secondary">
+                    <div class="flex justify-between">
+                        <span>Settings</span>
+                        <span class="kbd">S</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>New Quote</span>
+                        <span class="kbd">Space / N</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Share/Copy</span>
+                        <span class="kbd">C</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Read Aloud</span>
+                        <span class="kbd">V</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Story Card</span>
+                        <span class="kbd">I</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Back</span>
+                        <span class="kbd">Esc / B</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Categories 1-9</span>
+                        <span class="kbd">1-9</span>
+                    </div>
                 </div>
-
-                <div class="quote-actions">
-                    <button class="action-btn" onclick="getNewQuote()" data-translate="new-quote">Next Quote</button>
-                    <button class="action-btn" onclick="shareQuote()" data-translate="share">📤 Share</button>
-                    <button class="action-btn" onclick="speakQuote()" data-translate="voice">🔊 Listen</button>
+            </div>
+            
+            <!-- Device Info -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-3">Device Info</h3>
+                <div class="text-sm text-secondary space-y-1">
+                    <p id="device-type">Type: Loading...</p>
+                    <p id="device-os">OS: Loading...</p>
+                    <p id="device-browser">Browser: Loading...</p>
                 </div>
-
-                <div class="progress-indicator" id="progress"></div>
+            </div>
+            
+            <!-- Install App Button -->
+            <div class="mb-6">
+                <button id="install-btn" class="hidden w-full accent-bg text-white rounded-lg p-3 font-medium">
+                    <i class="fas fa-download mr-2"></i>
+                    Install App
+                </button>
+            </div>
+            
+            <!-- Easter Egg Hint -->
+            <div class="text-xs text-secondary text-center mt-8 opacity-50">
+                Psst... Try typing "rainbow", "matrix", or "retro" 🤫
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-    
-    <script>
-        function updateBellVisibility() {
-            const bellButton = document.querySelector('.notification-bell');
-            const menuSection = document.getElementById('menu');
+    <!-- Main Menu -->
+    <section id="main-menu" class="min-h-screen flex items-center justify-center px-4 py-12 fade-enter">
+        <div class="max-w-4xl w-full">
             
-            if (bellButton) {
-                if (menuSection && !menuSection.classList.contains('hidden')) {
-                    bellButton.style.opacity = '1';
-                    bellButton.style.visibility = 'visible';
-                } else {
-                    bellButton.style.opacity = '0';
-                    bellButton.style.visibility = 'hidden';
-                }
-            }
-        }
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <i class="fas fa-sparkles accent-color text-2xl"></i>
+                    <h1 class="text-5xl font-bold tracking-tight" data-i18n="title">Quote Galaxy</h1>
+                </div>
+                <p class="text-secondary text-lg" data-i18n="subtitle">Explore wisdom from around the world</p>
+            </div>
 
-        document.addEventListener('DOMContentLoaded', updateBellVisibility);
+            <!-- Main Options -->
+            <div class="grid md:grid-cols-3 gap-4">
+                
+                <!-- Browse Categories -->
+                <button id="browse-categories-btn" class="group bg-secondary bg-hover border border-custom rounded-2xl p-8 text-left">
+                    <i class="fas fa-compass text-4xl mb-4 accent-color"></i>
+                    <h2 class="text-2xl font-bold mb-2">Browse Categories</h2>
+                    <p class="text-secondary">Explore quotes by topic</p>
+                </button>
+                
+                <!-- Browse Authors -->
+                <button id="browse-authors-btn" class="group bg-secondary bg-hover border border-custom rounded-2xl p-8 text-left">
+                    <i class="fas fa-user-pen text-4xl mb-4 accent-color"></i>
+                    <h2 class="text-2xl font-bold mb-2">Browse Authors</h2>
+                    <p class="text-secondary">Quotes by famous writers</p>
+                </button>
+                
+                <!-- Quote Journeys -->
+                <button id="browse-journeys-btn" class="group bg-secondary bg-hover border border-custom rounded-2xl p-8 text-left">
+                    <i class="fas fa-route text-4xl mb-4 accent-color"></i>
+                    <h2 class="text-2xl font-bold mb-2">Quote Journeys</h2>
+                    <p class="text-secondary">Guided quote experiences</p>
+                </button>
+                
+            </div>
+            
+        </div>
+    </section>
 
-        const observer = new MutationObserver(updateBellVisibility);
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.querySelector('.container');
-            if (container) {
-                observer.observe(container, {
-                    attributes: true,
-                    subtree: true,
-                    attributeFilter: ['class']
-                });
+    <!-- Categories Section -->
+    <section id="categories" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-5xl w-full">
+            
+            <!-- Back to Menu -->
+            <button id="back-to-menu-from-categories" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+                <i class="fas fa-arrow-left"></i>
+                <span class="text-sm font-medium">Back to menu</span>
+            </button>
+            
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-2">Browse by Category</h2>
+                <p class="text-secondary">Choose a topic that speaks to you</p>
+            </div>
+
+            <!-- Category Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3" role="list">
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="all" tabindex="14" role="listitem">
+                    <i class="fas fa-infinity text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-all">All Quotes</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="life" tabindex="15" role="listitem">
+                    <i class="fas fa-seedling text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-life">Life</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="love" tabindex="16" role="listitem">
+                    <i class="fas fa-heart text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-love">Love</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="success" tabindex="17" role="listitem">
+                    <i class="fas fa-trophy text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-success">Success</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="inspire" tabindex="18" role="listitem">
+                    <i class="fas fa-lightbulb text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-inspire">Inspiration</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="wisdom" tabindex="19" role="listitem">
+                    <i class="fas fa-brain text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-wisdom">Wisdom</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="time" tabindex="20" role="listitem">
+                    <i class="fas fa-clock text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-time">Time</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="change" tabindex="21" role="listitem">
+                    <i class="fas fa-rotate text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-change">Change</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="mind" tabindex="22" role="listitem">
+                    <i class="fas fa-bullseye text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-mind">Mind</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="dream" tabindex="23" role="listitem">
+                    <i class="fas fa-cloud text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-dream">Dreams</p>
+                </button>
+                
+                <button class="category-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-category="peace" tabindex="24" role="listitem">
+                    <i class="fas fa-dove text-2xl mb-2 accent-color"></i>
+                    <p class="text-sm font-medium" data-i18n="cat-peace">Peace</p>
+                </button>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section id="authors" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-5xl w-full">
+            
+            <!-- Back to Menu -->
+            <button id="back-to-menu-from-authors" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+                <i class="fas fa-arrow-left"></i>
+                <span class="text-sm font-medium">Back to menu</span>
+            </button>
+            
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-2">Browse by Author</h2>
+                <p class="text-secondary">Explore wisdom from great thinkers</p>
+            </div>
+
+            <!-- Authors Grid -->
+            <div id="authors-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Authors will be loaded here dynamically -->
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Journeys Section -->
+    <section id="journeys" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-4xl w-full">
+            
+            <!-- Back to Menu -->
+            <button id="back-to-menu-from-journeys" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+                <i class="fas fa-arrow-left"></i>
+                <span class="text-sm font-medium">Back to menu</span>
+            </button>
+            
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-2">Quote Journeys</h2>
+                <p class="text-secondary">Curated paths of wisdom</p>
+            </div>
+
+            <!-- Journeys Grid -->
+            <div class="grid md:grid-cols-2 gap-4">
+                
+                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="morning">
+                    <div class="flex items-start justify-between mb-3">
+                        <i class="fas fa-sun text-3xl accent-color"></i>
+                        <span class="text-sm text-secondary">5 quotes</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Morning Focus</h3>
+                    <p class="text-sm text-secondary">Start your day with clarity and purpose</p>
+                </button>
+                
+                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="night">
+                    <div class="flex items-start justify-between mb-3">
+                        <i class="fas fa-moon text-3xl accent-color"></i>
+                        <span class="text-sm text-secondary">5 quotes</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Evening Peace</h3>
+                    <p class="text-sm text-secondary">Wind down with calm and reflection</p>
+                </button>
+                
+                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="overcome">
+                    <div class="flex items-start justify-between mb-3">
+                        <i class="fas fa-mountain text-3xl accent-color"></i>
+                        <span class="text-sm text-secondary">5 quotes</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Overcoming Challenges</h3>
+                    <p class="text-sm text-secondary">Find strength in difficult moments</p>
+                </button>
+                
+                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="gratitude">
+                    <div class="flex items-start justify-between mb-3">
+                        <i class="fas fa-heart text-3xl accent-color"></i>
+                        <span class="text-sm text-secondary">5 quotes</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Gratitude Flow</h3>
+                    <p class="text-sm text-secondary">Appreciate life's simple blessings</p>
+                </button>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Quote Display Section -->
+    <section id="quote-section" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-3xl w-full">
+            
+            <!-- Back Button -->
+            <button id="back-btn" tabindex="25" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+                <i class="fas fa-arrow-left"></i>
+                <span class="text-sm font-medium" data-i18n="back">Back</span>
+            </button>
+
+            <!-- Journey Progress (shown only in journey mode) -->
+            <div id="journey-progress-container" class="hidden mb-6">
+                <div class="flex items-center justify-between mb-2 text-sm text-secondary">
+                    <span id="journey-title">Journey</span>
+                    <span id="journey-step">1 / 5</span>
+                </div>
+                <div class="journey-progress">
+                    <div id="journey-progress-bar" class="journey-progress-bar" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- Quote Card with Schema.org markup -->
+            <div id="quote-container" class="quote-reveal">
+                <div class="bg-secondary border border-custom rounded-2xl p-8 md:p-12" itemscope itemtype="https://schema.org/Quotation">
+                    
+                    <i class="fas fa-quote-left text-3xl opacity-20 mb-6"></i>
+                    
+                    <p id="quote-text" itemprop="text" class="text-2xl md:text-3xl font-normal leading-relaxed mb-6">
+                        Loading quote...
+                    </p>
+                    
+                    <p id="quote-author" class="accent-color font-medium text-lg mb-8">
+                        — <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Author</span>
+                        </span>
+                    </p>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="new-quote-btn" tabindex="26" class="flex-1 min-w-[120px] bg-secondary bg-hover border border-custom rounded-lg px-4 py-3 font-medium text-sm">
+                            <i class="fas fa-rotate-right mr-2"></i>
+                            <span data-i18n="new-quote">Next</span>
+                        </button>
+                        <button id="voice-btn" tabindex="27" class="flex-1 min-w-[120px] bg-secondary bg-hover border border-custom rounded-lg px-4 py-3 font-medium text-sm" title="Read aloud (V)">
+                            <i class="fas fa-volume-high mr-2"></i>
+                            <span data-i18n="voice">Listen</span>
+                        </button>
+                        <button id="story-card-btn" tabindex="28" class="flex-1 min-w-[120px] bg-secondary bg-hover border border-custom rounded-lg px-4 py-3 font-medium text-sm" title="Create story card (I)">
+                            <i class="fas fa-image mr-2"></i>
+                            <span>Story</span>
+                        </button>
+                        <button id="share-btn" tabindex="29" class="flex-1 min-w-[120px] accent-bg accent-bg:hover border border-custom rounded-lg px-4 py-3 font-medium text-sm">
+                            <i class="fas fa-share-nodes mr-2"></i>
+                            <span data-i18n="share">Share</span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Status Message -->
+            <div class="flex justify-center mt-6">
+                <div id="status-message" class="status-badge inline-flex items-center gap-2 bg-secondary border border-custom rounded-full px-4 py-2 text-sm text-secondary">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Story Card Modal -->
+    <div id="story-card-modal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
+        <div class="bg-secondary border border-custom rounded-2xl p-6 max-w-md w-full">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold">Your Story Card</h3>
+                <button id="close-story-modal" class="text-secondary hover:text-primary">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Canvas Preview -->
+            <div class="mb-4 flex justify-center">
+                <canvas id="story-card-canvas" width="1080" height="1920" style="max-width: 100%; height: auto; border-radius: 12px;"></canvas>
+            </div>
+            
+            <!-- Download Button -->
+            <button id="download-story-btn" class="w-full accent-bg text-white rounded-lg py-3 font-medium">
+                <i class="fas fa-download mr-2"></i>
+                Download Story Card
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+     
+        <!-- Add Animation Styles -->
+    <style>
+    @keyframes bellPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+    @keyframes badgePulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,0,234,0.5); }
+        50% { transform: scale(1.2); box-shadow: 0 0 20px rgba(255,0,234,0.8); }
+    }
+    @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    #bellBtn:hover { transform: scale(1.1) rotate(15deg); }
+    #bellBadge { animation: badgePulse 2s infinite; }
+    </style>
+
+    <!-- Notification Bell - Top Left -->
+    <div id="bellBtn" style="position:fixed;top:20px;left:20px;width:50px;height:50px;background:linear-gradient(135deg,#2d3561,#1e2749);border:2px solid #00d4ff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999999;box-shadow:0 4px 15px rgba(0,212,255,0.3);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <span id="bellBadge" style="position:absolute;top:3px;right:3px;background:linear-gradient(135deg,#ff00ea,#cc00bb);color:white;font-size:10px;font-weight:bold;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px solid white;">2</span>
+    </div>
+
+    <!-- Notification Popup -->
+    <div id="bellPopup" style="display:none;position:fixed;top:80px;left:20px;width:350px;max-width:calc(100vw - 40px);background:linear-gradient(135deg,#2d3561,#1e2749);border:2px solid rgba(0,212,255,0.4);border-radius:15px;box-shadow:0 20px 60px rgba(0,0,0,0.5);z-index:999998;overflow:hidden;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-bottom:2px solid rgba(0,212,255,0.3);background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(255,0,234,0.1));">
+            <h3 style="margin:0;font-size:18px;color:#f0f0f0;">📢 Updates</h3>
+            <button id="bellClose" style="background:rgba(255,255,255,0.1);border:1px solid rgba(0,212,255,0.3);color:#00d4ff;font-size:20px;cursor:pointer;padding:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:all 0.3s;">✕</button>
+        </div>
+        <div style="padding:15px;max-height:400px;overflow-y:auto;">
+            <div style="display:flex;gap:12px;padding:15px;margin-bottom:10px;background:rgba(0,212,255,0.08);border-radius:10px;border-left:3px solid #00d4ff;transition:all 0.3s;">
+                <div style="font-size:28px;">🎉</div>
+                <div style="flex:1;">
+                    <strong style="color:#00d4ff;font-size:14px;display:block;margin-bottom:5px;">Notifications Are Here!</strong>
+                    <p style="color:#e4e4e4;font-size:12px;margin:0 0 5px 0;line-height:1.5;">You'll now receive updates about new features and improvements.</p>
+                    <span style="color:#00d4ff;font-size:10px;text-transform:uppercase;opacity:0.8;">Just now</span>
+                </div>
+            </div>
+            
+            <div style="display:flex;gap:12px;padding:15px;margin-bottom:10px;background:rgba(255,0,234,0.08);border-radius:10px;border-left:3px solid #ff00ea;transition:all 0.3s;">
+                <div style="font-size:28px;">🚀</div>
+                <div style="flex:1;">
+                    <strong style="color:#ff00ea;font-size:14px;display:block;margin-bottom:5px;">Stay Updated!</strong>
+                    <p style="color:#e4e4e4;font-size:12px;margin:0 0 5px 0;line-height:1.5;">Get notified about new quote categories, themes, and features.</p>
+                    <span style="color:#ff00ea;font-size:10px;text-transform:uppercase;opacity:0.8;">Just now</span>
+                </div>
+            </div>
+            
+            <div style="margin-top:10px;padding:15px;background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(255,0,234,0.05));border-radius:10px;border:1px solid rgba(0,212,255,0.2);">
+                <p style="color:#f0f0f0;margin:0 0 10px 0;font-size:14px;font-weight:600;">Contact Me</p>
+                <a href="https://instagram.com/shahipaneerkatadka" target="_blank" style="display:flex;align-items:center;gap:10px;color:#e4e4e4;text-decoration:none;padding:10px 12px;background:rgba(0,212,255,0.08);border-radius:8px;font-size:13px;margin-bottom:8px;border:1px solid rgba(0,212,255,0.2);transition:all 0.3s;">
+                    <span style="font-size:18px;">📷</span>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitter.com/aquilix14" target="_blank" style="display:flex;align-items:center;gap:10px;color:#e4e4e4;text-decoration:none;padding:10px 12px;background:rgba(255,0,234,0.08);border-radius:8px;font-size:13px;margin-bottom:8px;border:1px solid rgba(255,0,234,0.2);transition:all 0.3s;">
+                    <span style="font-size:18px;">🐦</span>
+                    <span>Twitter</span>
+                </a>
+                <a href="mailto:aaravthanvi289@gmail.com" style="display:flex;align-items:center;gap:10px;color:#e4e4e4;text-decoration:none;padding:10px 12px;background:rgba(0,212,255,0.08);border-radius:8px;font-size:13px;border:1px solid rgba(0,212,255,0.2);transition:all 0.3s;">
+                    <span style="font-size:18px;">✉️</span>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('bellBtn');
+        var popup = document.getElementById('bellPopup');
+        var close = document.getElementById('bellClose');
+        var badge = document.getElementById('bellBadge');
+        
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            if(popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block';
+                popup.style.animation = 'slideInLeft 0.4s ease-out';
+                if(badge) badge.style.display = 'none';
+            } else {
+                popup.style.display = 'none';
             }
+        };
+        
+        close.onclick = function(e) {
+            e.stopPropagation();
+            popup.style.display = 'none';
+        };
+        
+        close.onmouseover = function() {
+            close.style.background = 'rgba(255,0,234,0.3)';
+            close.style.transform = 'rotate(90deg)';
+            close.style.borderColor = '#ff00ea';
+        };
+        
+        close.onmouseout = function() {
+            close.style.background = 'rgba(255,255,255,0.1)';
+            close.style.transform = 'rotate(0deg)';
+            close.style.borderColor = 'rgba(0,212,255,0.3)';
+        };
+        
+        // Add hover effects to contact links
+        var links = popup.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.onmouseover = function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.boxShadow = '0 4px 15px rgba(0,212,255,0.3)';
+            };
+            link.onmouseout = function() {
+                this.style.transform = 'translateX(0)';
+                this.style.boxShadow = 'none';
+            };
         });
-
-        function showNotification() {
-            alert('🔔 Notification feature coming soon!');
-        }
+        
+        document.onclick = function(e) {
+            if(!btn.contains(e.target) && !popup.contains(e.target)) {
+                popup.style.display = 'none';
+            }
+        };
+    });
     </script>
 </body>
-</html>
