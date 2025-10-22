@@ -611,12 +611,13 @@
                     <p class="text-secondary">Quotes by famous writers</p>
                 </button>
                 
-                <!-- Quote Journeys -->
-                <button id="browse-journeys-btn" class="group bg-secondary bg-hover border border-custom rounded-2xl p-8 text-left">
-                    <i class="fas fa-route text-4xl mb-4 accent-color"></i>
-                    <h2 class="text-2xl font-bold mb-2">Quote Journeys</h2>
-                    <p class="text-secondary">Guided quote experiences</p>
-                </button>
+               <!-- Philosophy -->
+<button id="browse-philosophy-btn" class="group bg-secondary bg-hover border border-custom rounded-2xl p-8 text-left">
+    <i class="fas fa-brain text-4xl mb-4 accent-color"></i>
+    <h2 class="text-2xl font-bold mb-2">Philosophy</h2>
+    <p class="text-secondary">Explore philosophical wisdom</p>
+</button>
+
                 
             </div>
             
@@ -726,65 +727,37 @@
         </div>
     </section>
 
-    <!-- Journeys Section -->
-    <section id="journeys" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
-        <div class="max-w-4xl w-full">
+  <!-- Philosophy Section -->
+<section id="philosophy" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-5xl w-full">
+        
+        <!-- Back to Menu -->
+        <button id="back-to-menu-from-philosophy" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+            <i class="fas fa-arrow-left"></i>
+            <span class="text-sm font-medium">Back to menu</span>
+        </button>
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-2">Browse by Philosophy</h2>
+            <p class="text-secondary">Explore different schools of thought</p>
+        </div>
+        
+        <!-- Philosophy Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             
-            <!-- Back to Menu -->
-            <button id="back-to-menu-from-journeys" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
-                <i class="fas fa-arrow-left"></i>
-                <span class="text-sm font-medium">Back to menu</span>
+            <!-- Stoicism -->
+            <button class="philosophy-btn category-badge group bg-secondary bg-hover border border-custom rounded-xl p-4" data-philosophy="stoicism" tabindex="25" role="listitem">
+                <i class="fas fa-mountain text-2xl mb-2 accent-color"></i>
+                <p class="text-sm font-medium">Stoicism</p>
             </button>
             
-            <!-- Header -->
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-2">Quote Journeys</h2>
-                <p class="text-secondary">Curated paths of wisdom</p>
-            </div>
-
-            <!-- Journeys Grid -->
-            <div class="grid md:grid-cols-2 gap-4">
-                
-                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="morning">
-                    <div class="flex items-start justify-between mb-3">
-                        <i class="fas fa-sun text-3xl accent-color"></i>
-                        <span class="text-sm text-secondary">5 quotes</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Morning Focus</h3>
-                    <p class="text-sm text-secondary">Start your day with clarity and purpose</p>
-                </button>
-                
-                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="night">
-                    <div class="flex items-start justify-between mb-3">
-                        <i class="fas fa-moon text-3xl accent-color"></i>
-                        <span class="text-sm text-secondary">5 quotes</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Evening Peace</h3>
-                    <p class="text-sm text-secondary">Wind down with calm and reflection</p>
-                </button>
-                
-                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="overcome">
-                    <div class="flex items-start justify-between mb-3">
-                        <i class="fas fa-mountain text-3xl accent-color"></i>
-                        <span class="text-sm text-secondary">5 quotes</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Overcoming Challenges</h3>
-                    <p class="text-sm text-secondary">Find strength in difficult moments</p>
-                </button>
-                
-                <button class="journey-card bg-secondary bg-hover border border-custom rounded-xl p-6 text-left" data-journey="gratitude">
-                    <div class="flex items-start justify-between mb-3">
-                        <i class="fas fa-heart text-3xl accent-color"></i>
-                        <span class="text-sm text-secondary">5 quotes</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Gratitude Flow</h3>
-                    <p class="text-sm text-secondary">Appreciate life's simple blessings</p>
-                </button>
-                
-            </div>
+            <!-- More philosophy categories can be added here -->
             
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Quote Display Section -->
     <section id="quote-section" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
