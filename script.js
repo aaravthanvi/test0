@@ -1269,6 +1269,7 @@ function updateMetaTags(quote) {
 // ============================================
 
 function showQuoteSection() {
+    document.getElementById('bellBtn').style.display = 'none'; // Hide bell button
     mainMenu.classList.add('hidden');
     categoriesSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
@@ -1279,6 +1280,7 @@ function showQuoteSection() {
 }
 
 function showMainMenu() {
+    document.getElementById('bellBtn').style.display = 'flex'; // Show bell button
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
