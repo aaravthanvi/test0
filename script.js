@@ -1298,6 +1298,7 @@ function showMainMenu() {
 }
 
 function showCategoriesSection() {
+    document.getElementById('bellBtn').style.display = 'none';
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     authorsSection.classList.add('hidden');
@@ -1306,6 +1307,7 @@ function showCategoriesSection() {
 }
 
 function showAuthorsSection() {
+    document.getElementById('bellBtn').style.display = 'none';
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
@@ -1325,6 +1327,7 @@ function showAuthorsSection() {
 
 
 function showJourneysSection() {
+    document.getElementById('bellBtn').style.display = 'none';
     mainMenu.classList.add('hidden');
     quoteSection.classList.add('hidden');
     categoriesSection.classList.add('hidden');
