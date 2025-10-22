@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quote Galaxy - Inspirational Quotes from Around the World</title>
+    <meta name="title" content="Quote Galaxy - Inspirational Quotes from Around the World">
+    <meta name="description" content="Explore 1000+ inspirational quotes across 11 categories including Life, Love, Success, Wisdom, Peace. Get daily motivation with beautiful themes and multilingual support.">
+    <meta name="keywords" content="quotes, inspirational quotes, motivational quotes, wisdom, life quotes, success quotes, daily quotes, peace quotes, calm quotes">
+    <meta name="author" content="Aarav Thaanvi">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aaravthanvi.github.io/">
+    <meta property="og:title" content="Quote Galaxy - Inspirational Quotes">
+    <meta property="og:description" content="Explore wisdom from around the world with 1000+ inspirational quotes">
+    <meta property="og:image" content="icons/app-512.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aaravthanvi.github.io/">
+    <meta property="twitter:title" content="Quote Galaxy - Inspirational Quotes">
+    <meta property="twitter:description" content="Explore wisdom from around the world">
+    <meta property="twitter:image" content="icons/app-512.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <link rel="apple-touch-icon" href="icons/app-192.png">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .notification-bell {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            font-size: 24px;
+            cursor: pointer;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 10px 15px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-bell" onclick="showNotification()">🔔</div>
+
+    <div class="container">
+        <div id="menu">
+            <div class="header">
+                <h1 class="title" data-translate="title">Quote Galaxy</h1>
+                <p class="subtitle" data-translate="subtitle">Explore wisdom from around the world</p>
+                
+                <div class="language-selector">
+                    <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+                    <button onclick="changeLanguage('hi')" class="lang-btn" data-lang="hi">🇮🇳 HI</button>
+                    <button onclick="changeLanguage('es')" class="lang-btn" data-lang="es">🇪🇸 ES</button>
+                    <button onclick="changeLanguage('fr')" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+                    <button onclick="changeLanguage('de')" class="lang-btn" data-lang="de">🇩🇪 DE</button>
+                    <button onclick="changeLanguage('it')" class="lang-btn" data-lang="it">🇮🇹 IT</button>
+                    <button onclick="changeLanguage('pt')" class="lang-btn" data-lang="pt">🇵🇹 PT</button>
+                    <button onclick="changeLanguage('ar')" class="lang-btn" data-lang="ar">🇸🇦 AR</button>
+                    <button onclick="changeLanguage('ja')" class="lang-btn" data-lang="ja">🇯🇵 JA</button>
+                    <button onclick="changeLanguage('zh')" class="lang-btn" data-lang="zh">🇨🇳 ZH</button>
+                    <button onclick="changeLanguage('ko')" class="lang-btn" data-lang="ko">🇰🇷 KO</button>
+                    <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-card" onclick="showSection('categories')">
+                    <div class="card-icon">📚</div>
+                    <h2>Browse Categories</h2>
+                    <p>Explore quotes by theme</p>
+                </div>
+
+                <div class="menu-card" onclick="showSection('authors')">
+                    <div class="card-icon">✍️</div>
+                    <h2>Browse Authors</h2>
+                    <p>Discover quotes by author</p>
+                </div>
+
+                <div class="menu-card" onclick="showSection('philosophy')">
+                    <div class="card-icon">🏛️</div>
+                    <h2>Browse Philosophy</h2>
+                    <p>Explore philosophical wisdom</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="categories" class="hidden">
+            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
+            <h2 class="section-title">Quote Categories</h2>
+            
+            <div class="category-grid" id="category-cards">
+                <div class="category-card" data-category="all">
+                    <div class="card-icon">🌟</div>
+                    <h3 data-translate="cat-all">All Quotes</h3>
+                    <p>Every inspiring quote</p>
+                </div>
+
+                <div class="category-card" data-category="life">
+                    <div class="card-icon">🌱</div>
+                    <h3 data-translate="cat-life">Life</h3>
+                    <p>Wisdom about living</p>
+                </div>
+
+                <div class="category-card" data-category="love">
+                    <div class="card-icon">❤️</div>
+                    <h3 data-translate="cat-love">Love</h3>
+                    <p>Quotes on love & relationships</p>
+                </div>
+
+                <div class="category-card" data-category="success">
+                    <div class="card-icon">🏆</div>
+                    <h3 data-translate="cat-success">Success</h3>
+                    <p>Achieve your goals</p>
+                </div>
+
+                <div class="category-card" data-category="inspire">
+                    <div class="card-icon">✨</div>
+                    <h3 data-translate="cat-inspire">Inspiration</h3>
+                    <p>Get motivated daily</p>
+                </div>
+
+                <div class="category-card" data-category="wisdom">
+                    <div class="card-icon">🦉</div>
+                    <h3 data-translate="cat-wisdom">Wisdom</h3>
+                    <p>Deep life lessons</p>
+                </div>
+
+                <div class="category-card" data-category="time">
+                    <div class="card-icon">⏰</div>
+                    <h3 data-translate="cat-time">Time</h3>
+                    <p>Value every moment</p>
+                </div>
+
+                <div class="category-card" data-category="change">
+                    <div class="card-icon">🔄</div>
+                    <h3 data-translate="cat-change">Change</h3>
+                    <p>Embrace transformation</p>
+                </div>
+
+                <div class="category-card" data-category="mind">
+                    <div class="card-icon">🧠</div>
+                    <h3 data-translate="cat-mind">Mind</h3>
+                    <p>Mental strength & clarity</p>
+                </div>
+
+                <div class="category-card" data-category="dream">
+                    <div class="card-icon">💭</div>
+                    <h3 data-translate="cat-dream">Dreams</h3>
+                    <p>Follow your aspirations</p>
+                </div>
+
+                <div class="category-card" data-category="peace">
+                    <div class="card-icon">☮️</div>
+                    <h3 data-translate="cat-peace">Peace</h3>
+                    <p>Find inner calm</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="authors" class="hidden">
+            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
+            <h2 class="section-title">Browse by Author</h2>
+            <div class="author-grid" id="author-cards"></div>
+        </div>
+
+        <div id="philosophy" class="hidden">
+            <button class="back-btn" onclick="showSection('menu')" data-translate="back">← Back</button>
+            <h2 class="section-title">Philosophy</h2>
+            
+            <div class="category-grid" id="philosophy-cards">
+                <div class="category-card" data-category="stoicism">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Stoicism</h3>
+                    <p>Ancient wisdom on virtue, resilience & inner peace</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quote-section" class="hidden">
+            <button class="back-btn" onclick="showSection('categories')" data-translate="back">← Back</button>
+            
+            <div class="quote-container">
+                <div class="quote-card">
+                    <p class="quote-text" id="quote-text"></p>
+                    <p class="quote-author" id="quote-author"></p>
+                    <p class="quote-counter" id="quote-counter"></p>
+                </div>
+
+                <div class="quote-actions">
+                    <button class="action-btn" onclick="getNewQuote()" data-translate="new-quote">Next Quote</button>
+                    <button class="action-btn" onclick="shareQuote()" data-translate="share">📤 Share</button>
+                    <button class="action-btn" onclick="speakQuote()" data-translate="voice">🔊 Listen</button>
+                </div>
+
+                <div class="progress-indicator" id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function updateBellVisibility() {
+            const bellButton = document.querySelector('.notification-bell');
+            const menuSection = document.getElementById('menu');
+            
+            if (bellButton) {
+                if (menuSection && !menuSection.classList.contains('hidden')) {
+                    bellButton.style.opacity = '1';
+                    bellButton.style.visibility = 'visible';
+                } else {
+                    bellButton.style.opacity = '0';
+                    bellButton.style.visibility = 'hidden';
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateBellVisibility);
+
+        const observer = new MutationObserver(updateBellVisibility);
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            if (container) {
+                observer.observe(container, {
+                    attributes: true,
+                    subtree: true,
+                    attributeFilter: ['class']
+                });
+            }
+        });
+
+        function showNotification() {
+            alert('🔔 Notification feature coming soon!');
+        }
+    </script>
+</body>
+</html>
