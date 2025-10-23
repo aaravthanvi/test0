@@ -263,18 +263,19 @@ let zenEnabled = false;
 let zenCurrentStyle = 'particles';
 
 const categoryKeywords = {
-    'all': [],
-    'life': ['life', 'live', 'living', 'exist', 'journey', 'experience'],
-    'love': ['love', 'heart', 'compassion', 'kindness', 'care', 'affection'],
-    'success': ['success', 'achieve', 'goal', 'accomplish', 'win', 'victory'],
-    'inspire': ['inspire', 'inspiration', 'motivate', 'encourage', 'empower', 'aspire', 'dream', 'possibility', 'potential', 'greatness'],
-    'wisdom': ['wisdom', 'wise', 'knowledge', 'learn', 'understand', 'truth'],
-    'time': ['time', 'moment', 'past', 'future', 'present', 'today', 'tomorrow'],
-    'change': ['change', 'transform', 'grow', 'evolve', 'adapt', 'different'],
-    'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
-    'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
-    'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
-    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
+  'all': [],
+  'life': ['life', 'live', 'living', 'exist', 'journey', 'experience'],
+  'love': ['love', 'heart', 'compassion', 'kindness', 'care', 'affection'],
+  'success': ['success', 'achieve', 'goal', 'accomplish', 'win', 'victory'],
+  'inspire': ['inspire', 'inspiration', 'motivate', 'encourage', 'empower', 'aspire', 'dream', 'possibility', 'potential', 'greatness'],
+  'wisdom': ['wisdom', 'wise', 'knowledge', 'learn', 'understand', 'truth'],
+  'time': ['time', 'moment', 'past', 'future', 'present', 'today', 'tomorrow'],
+  'change': ['change', 'transform', 'grow', 'evolve', 'adapt', 'different'],
+  'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
+  'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
+  'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
+  'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude'], // ← comma added
+  'gita': ['gita', 'bhagavad', 'krishna', 'arjuna', 'dharma', 'karma', 'yoga', 'atma', 'detachment', 'duty', 'sattva', 'rajas', 'tamas'] // new
 };
 
 const journeyDefinitions = {
@@ -1139,7 +1140,44 @@ async function fetchAllQuotes() {
         } catch (err) {
             console.log('⚠️ ZenQuotes failed:', err);
         }
-        
+
+        // API 4: Bhagavad Gita — load a small set of famous references (chapter.verse)
+try {
+  const gitaRefs = ["2.47","4.7","3.19","12.15","18.66","9.22","6.5","8.7","2.50","3.30"]; // add more later
+
+  // Set this base from the API you choose (see docs):
+  // Option: Open-source Shrimad Bhagavad Gita API (pattern v1/verses/{chapter.verse})
+  // Option: BhagavadGita.io (needs API key)
+  // Option: RapidAPI Bhagavad Gita3 (needs RapidAPI key)
+  const GITA_BASE = "SET_THIS_FROM_CHOSEN_API_DOCS";
+
+  for (const ref of gitaRefs) {
+    const url = `${GITA_BASE}/v1/verses/${ref}`; // endpoint pattern per public docs
+    const res = await fetch(url /* add headers here if your chosen API requires a key */);
+    if (!res.ok) continue;
+    const data = await res.json();
+
+    // Pick the best available English text field
+    const txt =
+      data?.translations?.find(t => /english/i.test(t?.language || ""))?.text ||
+      data?.translations?.[0]?.text ||
+      data?.verse || // some APIs
+      data?.slok ||  // some APIs
+      "";
+
+    if (txt) {
+      combinedQuotes.push({
+        id: 3000 + combinedQuotes.length,
+        quote: txt,
+        author: `Bhagavad Gita ${ref}`
+      });
+    }
+  }
+  console.log("Gita verses loaded");
+} catch (err) {
+  console.log("Gita API failed", err);
+}
+
         // Remove duplicates based on quote text
         const uniqueQuotes = [];
         const seenQuotes = new Set();
