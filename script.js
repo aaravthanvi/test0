@@ -274,8 +274,7 @@ const categoryKeywords = {
     'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
     'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
     'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
-    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude'],
-    'bhagavad-gita': ['krishna', 'arjuna', 'dharma', 'karma', 'yoga', 'devotion', 'duty', 'soul', 'eternal', 'truth', 'righteousness', 'divine', 'vedic', 'gita', 'lord', 'wisdom', 'self', 'action']
+    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
 };
 
 const journeyDefinitions = {
@@ -404,113 +403,7 @@ const curatedQuotes = [
     { id: 10075, quote: "Play long-term games with long-term people.", author: "Naval Ravikant" },
     { id: 10076, quote: "Specific knowledge is found by pursuing your genuine curiosity.", author: "Naval Ravikant" },
     { id: 10077, quote: "The most important skill for getting rich is becoming a perpetual learner.", author: "Naval Ravikant" },
-    { id: 10078, quote: "A fit body, a calm mind, a house full of love. These things cannot be bought — they must be earned.", author: "Naval Ravikant" },
-  
-    
-    // Bhagavad Gita Verses
-'Bhagavad Gita': [
-    {
-        id: 11001,
-        quote: "You have the right to work, but never to the fruit of work.",
-        author: "Bhagavad Gita 2.47"
-    },
-    {
-        id: 11002,
-        quote: "The soul is neither born, and nor does it die.",
-        author: "Bhagavad Gita 2.20"
-    },
-    {
-        id: 11003,
-        quote: "Set your heart upon your work, but never on its reward.",
-        author: "Bhagavad Gita 2.47"
-    },
-    {
-        id: 11004,
-        quote: "When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place.",
-        author: "Bhagavad Gita 6.19"
-    },
-    {
-        id: 11005,
-        quote: "One who sees inaction in action, and action in inaction, is intelligent among men.",
-        author: "Bhagavad Gita 4.18"
-    },
-    {
-        id: 11006,
-        quote: "A person can rise through the efforts of his own mind; or draw himself down, in the same manner.",
-        author: "Bhagavad Gita 6.5"
-    },
-    {
-        id: 11007,
-        quote: "There is nothing lost or wasted in this life.",
-        author: "Bhagavad Gita 2.40"
-    },
-    {
-        id: 11008,
-        quote: "Change is the law of the universe. You can be a millionaire, or a pauper in an instant.",
-        author: "Bhagavad Gita"
-    },
-    {
-        id: 11009,
-        quote: "Whatever happened, happened for the good. Whatever is happening, is happening for the good.",
-        author: "Bhagavad Gita"
-    },
-    {
-        id: 11010,
-        quote: "The mind is restless and difficult to restrain, but it is subdued by practice.",
-        author: "Bhagavad Gita 6.35"
-    },
-    {
-        id: 11011,
-        quote: "One who is not envious but is a kind friend to all beings, who does not think 'I am', 'mine', such a devotee of mine is very dear to Me.",
-        author: "Bhagavad Gita 12.13-14"
-    },
-    {
-        id: 11012,
-        quote: "Reshape yourself through the power of your will.",
-        author: "Bhagavad Gita 6.5"
-    },
-    {
-        id: 11013,
-        quote: "I am seated in the hearts of all living entities.",
-        author: "Bhagavad Gita 15.15"
-    },
-    {
-        id: 11014,
-        quote: "Among all kinds of killers, time is the ultimate.",
-        author: "Bhagavad Gita 11.32"
-    },
-    {
-        id: 11015,
-        quote: "He who has no attachments can really love others, for his love is pure and divine.",
-        author: "Bhagavad Gita"
-    },
-    {
-        id: 11016,
-        quote: "The wise see knowledge and action as one.",
-        author: "Bhagavad Gita 4.18"
-    },
-    {
-        id: 11017,
-        quote: "Perform your obligatory duty, because action is indeed better than inaction.",
-        author: "Bhagavad Gita 3.8"
-    },
-    {
-        id: 11018,
-        quote: "One who is equal to friends and enemies, who is equipoised in honor and dishonor, is very dear to Me.",
-        author: "Bhagavad Gita 12.18"
-    },
-    {
-        id: 11019,
-        quote: "The happiness which comes from long practice, which leads to the end of suffering, is like poison at first but nectar in the end.",
-        author: "Bhagavad Gita 18.37"
-    },
-    {
-        id: 11020,
-        quote: "When your mind is no longer disturbed by the flowery language of the Vedas, and remains fixed in the trance of self-realization, then you will have attained the divine consciousness.",
-        author: "Bhagavad Gita 2.53"
-    }
-]
-
+    { id: 10078, quote: "A fit body, a calm mind, a house full of love. These things cannot be bought — they must be earned.", author: "Naval Ravikant" }
 ];
 
 // ============================================
@@ -1776,4 +1669,3 @@ setTheme = function(name) {
 
 // Run on load
 applySettingsContrast();
-
