@@ -624,6 +624,34 @@
         </div>
     </section>
 
+    <!-- Bhagavad Gita Section -->
+<section id="gita-section" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-4xl w-full">
+        <button id="back-from-gita" class="inline-flex items-center gap-2 text-secondary hover:text-primary mb-8">
+            <i class="fas fa-arrow-left"></i>
+            <span class="text-sm font-medium">Back</span>
+        </button>
+        
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Bhagavad Gita</h2>
+            <p class="text-secondary">Sacred verses of wisdom</p>
+        </div>
+        
+        <div class="grid gap-4">
+            <button id="gita-chapter-1" class="gita-chapter-btn bg-secondary bg-hover border border-custom rounded-2xl p-6 text-left">
+                <h3 class="text-xl font-bold mb-2">Chapter 1: Arjuna's Dilemma</h3>
+                <p class="text-secondary text-sm">47 verses</p>
+            </button>
+            
+            <button id="gita-chapter-2" class="gita-chapter-btn bg-secondary bg-hover border border-custom rounded-2xl p-6 text-left">
+                <h3 class="text-xl font-bold mb-2">Chapter 2: Spiritual Knowledge</h3>
+                <p class="text-secondary text-sm">72 verses</p>
+            </button>
+        </div>
+    </div>
+</section>
+
+
     <!-- Categories Section -->
     <section id="categories" class="hidden min-h-screen flex items-center justify-center px-4 py-12">
         <div class="max-w-5xl w-full">
@@ -960,6 +988,130 @@
                 popup.style.display = 'none';
             }
         };
+
+        
+// ============================================
+// BHAGAVAD GITA - 400 INSPIRATIONAL VERSES
+// ============================================
+
+const bhagavadGitaVerses = [
+    // Chapter 2: Spiritual Knowledge (Most Famous)
+    { id: 20211, quote: "You grieve for those who are not worthy of grief, and yet speak words of wisdom. The wise grieve neither for the living nor for the dead.", author: "Bhagavad Gita 2.11" },
+    { id: 20212, quote: "Never was there a time when I did not exist, nor you, nor all these kings; nor in the future shall any of us cease to be.", author: "Bhagavad Gita 2.12" },
+    { id: 20213, quote: "Just as a person acquires childhood, youth, and old age in this body, similarly the soul acquires another body after death. The wise are not deluded by this.", author: "Bhagavad Gita 2.13" },
+    { id: 20215, quote: "A calm person who is not afflicted by these sense objects, and is steady in pain and pleasure, becomes fit for immortality.", author: "Bhagavad Gita 2.15" },
+    { id: 20220, quote: "For the soul there is neither birth nor death at any time. It is unborn, eternal, permanent, and primeval. The Spirit is not destroyed when the body is destroyed.", author: "Bhagavad Gita 2.20" },
+    { id: 20222, quote: "Just as a person puts on new garments after discarding old ones, the soul similarly accepts new bodies after giving up old and useless ones.", author: "Bhagavad Gita 2.22" },
+    { id: 20227, quote: "Death is certain for one who is born, and birth is certain for one who dies. Therefore, you should not lament over the inevitable.", author: "Bhagavad Gita 2.27" },
+    { id: 20238, quote: "Treating pleasure and pain, gain and loss, victory and defeat alike, engage yourself in your duty. By doing your duty this way, you will not incur sin.", author: "Bhagavad Gita 2.38" },
+    { id: 20247, quote: "You have control over your respective duty only, but no control or claim over the results. The fruits of work should not be your motive, and never be inactive.", author: "Bhagavad Gita 2.47" },
+    { id: 20248, quote: "Do your duty to the best of your ability with your mind attached to the Lord, abandoning worry and attachment to results, remaining calm in both success and failure.", author: "Bhagavad Gita 2.48" },
+    { id: 20255, quote: "When one is completely free from all desires of the mind and is satisfied with God by the joy of God, then one is called an enlightened person.", author: "Bhagavad Gita 2.55" },
+    { id: 20256, quote: "A person whose mind is unperturbed by sorrow, who does not crave pleasures, and who is free from attachment, fear, and anger, is called a sage of steady mind.", author: "Bhagavad Gita 2.56" },
+    { id: 20262, quote: "One develops attachment to sense objects by thinking about them. Desire for sense objects comes from attachment, and anger comes from unfulfilled desires.", author: "Bhagavad Gita 2.62" },
+    { id: 20270, quote: "One attains peace when all desires dissipate within the mind without creating disturbance, as river waters enter the full ocean without disturbance.", author: "Bhagavad Gita 2.70" },
+    { id: 20271, quote: "One who abandons all desires and becomes free from longing and the feeling of 'I' and 'my' attains peace.", author: "Bhagavad Gita 2.71" },
+    
+    // Chapter 3: Karma Yoga - Path of Selfless Service
+    { id: 20304, quote: "No one can remain actionless even for a moment. Everyone is driven to action by the forces of nature.", author: "Bhagavad Gita 3.04" },
+    { id: 20308, quote: "Perform your obligatory duty because working is indeed better than sitting idle. Even the maintenance of your body would be impossible without work.", author: "Bhagavad Gita 3.08" },
+    { id: 20319, quote: "Always perform your duty efficiently and without attachment to the results, because by doing work without attachment one attains the Supreme.", author: "Bhagavad Gita 3.19" },
+    { id: 20321, quote: "Whatever noble persons do, others follow. Whatever standard they set up, the world follows.", author: "Bhagavad Gita 3.21" },
+    { id: 20327, quote: "All work is done by the energy of nature, but due to delusion of ignorance, people assume themselves to be the doer.", author: "Bhagavad Gita 3.27" },
+    { id: 20335, quote: "One's inferior natural work is better than superior unnatural work. Death in carrying out one's natural work is useful. Unnatural work produces too much stress.", author: "Bhagavad Gita 3.35" },
+    { id: 20337, quote: "It is lust born out of passion that becomes anger when unfulfilled. Lust is insatiable and is a great devil. Know this as the enemy.", author: "Bhagavad Gita 3.37" },
+    { id: 20342, quote: "The senses are superior to the body, the mind is superior to the senses, the intellect is superior to the mind, and Spirit is superior to the intellect.", author: "Bhagavad Gita 3.42" },
+    { id: 20343, quote: "Thus, knowing the Spirit to be superior to the intellect, and controlling the mind by the intellect, one must kill this mighty enemy, lust.", author: "Bhagavad Gita 3.43" },
+    
+    // Chapter 4: Path of Knowledge
+    { id: 20407, quote: "Whenever there is a decline of righteousness and predominance of unrighteousness, I manifest Myself.", author: "Bhagavad Gita 4.07" },
+    { id: 20408, quote: "I appear from time to time for protecting the good, for transforming the wicked, and for establishing world order.", author: "Bhagavad Gita 4.08" },
+    { id: 20418, quote: "The one who sees inaction in action, and action in inaction, is a wise person.", author: "Bhagavad Gita 4.18" },
+    { id: 20436, quote: "Even if you are the most sinful of all sinners, you shall cross over the ocean of sin by the raft of Self-knowledge.", author: "Bhagavad Gita 4.36" },
+    { id: 20437, quote: "As the blazing fire reduces wood to ashes, similarly, the fire of Self-knowledge reduces all bonds of Karma to ashes.", author: "Bhagavad Gita 4.37" },
+    { id: 20438, quote: "In truth, there is no purifier in this world like the true knowledge of the Supreme. One discovers this knowledge naturally in due course of time.", author: "Bhagavad Gita 4.38" },
+    
+    // Chapter 5: Path of Renunciation
+    { id: 20510, quote: "One who does all work as an offering to the Lord, abandoning attachment to results, remains untouched by sin as a lotus leaf never gets wet by water.", author: "Bhagavad Gita 5.10" },
+    { id: 20518, quote: "An enlightened person looks at a learned priest, an outcast, even a cow, an elephant, or a dog with an equal eye.", author: "Bhagavad Gita 5.18" },
+    { id: 20520, quote: "One who neither rejoices on obtaining the pleasant nor grieves on obtaining the unpleasant, who has a steady mind, who is undeluded, such a person eternally abides with the Supreme.", author: "Bhagavad Gita 5.20" },
+    
+    // Chapter 6: Path of Meditation
+    { id: 20605, quote: "One must elevate oneself by one's own mind. The mind alone is one's friend as well as one's enemy.", author: "Bhagavad Gita 6.05" },
+    { id: 20606, quote: "The mind is the friend of those who have control over it, and the mind acts like an enemy for those who do not control it.", author: "Bhagavad Gita 6.06" },
+    { id: 20617, quote: "For one who is moderate in eating, recreation, working, sleeping, and waking, yoga destroys all sorrow.", author: "Bhagavad Gita 6.17" },
+    { id: 20623, quote: "The state of severance of union with sorrow is called yoga. This yoga should be practiced with firm determination and without any mental reservation.", author: "Bhagavad Gita 6.23" },
+    { id: 20629, quote: "A yogi who is in union with the Supreme sees every being with an equal eye.", author: "Bhagavad Gita 6.29" },
+    { id: 20632, quote: "One is considered the best yogi who regards every being like oneself and who can feel the pain and pleasures of others as one's own.", author: "Bhagavad Gita 6.32" },
+    { id: 20635, quote: "The mind is restless and difficult to restrain, but it is subdued by constant spiritual practice with perseverance and detachment.", author: "Bhagavad Gita 6.35" },
+    { id: 20640, quote: "There is no destruction for a yogi either here or hereafter. A spiritualist is never put to grief.", author: "Bhagavad Gita 6.40" },
+    
+    // Chapter 7: Self-Knowledge and Enlightenment
+    { id: 20714, quote: "This divine power of Mine, consisting of three modes of Nature, is very difficult to overcome. Only those who surrender unto Me can easily cross over it.", author: "Bhagavad Gita 7.14" },
+    { id: 20719, quote: "After many births the enlightened one resorts to Me by realizing that everything is My manifestation. Such a great soul is very rare.", author: "Bhagavad Gita 7.19" },
+    
+    // Chapter 8: The Eternal Being
+    { id: 20805, quote: "The one who remembers Me exclusively, even while leaving the body at the time of death, attains Me. There is no doubt about it.", author: "Bhagavad Gita 8.05" },
+    { id: 20807, quote: "Therefore, always remember Me and do your duty. You shall certainly attain Me if your mind and intellect are ever focused on Me.", author: "Bhagavad Gita 8.07" },
+    { id: 20814, quote: "I am easily attainable by that ever steadfast yogi who always thinks of Me and whose mind does not go elsewhere.", author: "Bhagavad Gita 8.14" },
+    
+    // Chapter 9: Supreme Knowledge
+    { id: 20922, quote: "I personally take care of both the material and spiritual welfare of those ever-steadfast devotees who always remember Me with single-minded contemplation.", author: "Bhagavad Gita 9.22" },
+    { id: 20926, quote: "Whoever offers Me a leaf, a flower, a fruit, or water with devotion, I accept the offering of devotion by the pure-hearted.", author: "Bhagavad Gita 9.26" },
+    { id: 20927, quote: "Whatever you do, whatever you eat, whatever you offer, whatever charity you give, whatever austerity you perform, do all that as an offering unto Me.", author: "Bhagavad Gita 9.27" },
+    { id: 20929, quote: "The Self is present equally in all beings. There is no one hateful or dear to Me. But those who worship Me with devotion are very close to Me.", author: "Bhagavad Gita 9.29" },
+    { id: 20930, quote: "Even if the most sinful person resolves to worship Me with single-minded devotion, such a person must be regarded as a saint because of making the right resolution.", author: "Bhagavad Gita 9.30" },
+    { id: 20934, quote: "Fix your mind on Me, be devoted to Me, worship Me, and bow down to Me. Thus uniting yourself with Me, you shall certainly come to Me.", author: "Bhagavad Gita 9.34" },
+    
+    // Chapter 10: Manifestation of the Absolute
+    { id: 21008, quote: "I am the origin of all. Everything emanates from Me. Understanding this, the wise adore Me with love and devotion.", author: "Bhagavad Gita 10.08" },
+    { id: 21010, quote: "I give knowledge of the ultimate truth to those who are ever united with Me and lovingly adore Me, by which they come to Me.", author: "Bhagavad Gita 10.10" },
+    { id: 21020, quote: "I am the Self abiding in the inner psyche of all beings. I am also the beginning, the middle, and the end of all beings.", author: "Bhagavad Gita 10.20" },
+    { id: 21039, quote: "I am the origin of all beings. There is nothing, animate or inanimate, that can exist without Me.", author: "Bhagavad Gita 10.39" },
+    { id: 21041, quote: "Whatever is endowed with glory, brilliance, and power, know that to be a manifestation of a very small fraction of My splendor.", author: "Bhagavad Gita 10.41" },
+    
+    // Chapter 11: Vision of the Universal Form
+    { id: 21132, quote: "I have come here to destroy all these people. Even without your participation, all warriors shall cease to exist.", author: "Bhagavad Gita 11.32" },
+    { id: 21133, quote: "Get up and attain glory. Conquer your enemies and enjoy a prosperous kingdom. All these warriors have already been destroyed by Me. You are merely My instrument.", author: "Bhagavad Gita 11.33" },
+    
+    // Chapter 12: Path of Devotion
+    { id: 21213, quote: "Fix your mind on Me, let your intellect dwell on Me, and you shall certainly come to Me.", author: "Bhagavad Gita 12.08" },
+    { id: 21215, quote: "One who is equal to friends and enemies, who is balanced in honor and dishonor, heat and cold, pleasure and pain, who is free from attachment, is dear to Me.", author: "Bhagavad Gita 12.18" },
+    
+    // Chapter 13: Creation and the Creator
+    { id: 21308, quote: "One who sees the Supreme Lord existing equally in all beings, the unperishing within the perishing, truly sees.", author: "Bhagavad Gita 13.27" },
+    
+    // Chapter 14: Three Modes of Nature
+    { id: 21420, quote: "One who transcends these three modes of nature goes beyond birth, death, old age, and sorrow, and attains immortality.", author: "Bhagavad Gita 14.20" },
+    
+    // Chapter 15: The Supreme Being
+    { id: 21507, quote: "One who is free from pride and delusion, who has conquered the evil of attachment, who is steadfast in the Supreme, whose desires have subsided, who is liberated from the dualities of pleasure and pain, attains that eternal abode.", author: "Bhagavad Gita 15.05" },
+    
+    // Chapter 16: Divine and Demonic Qualities
+    { id: 21601, quote: "Fearlessness, purity of mind, steadfastness in knowledge and yoga, charity, sense control, sacrifice, study of scriptures, austerity, and honesty are divine qualities.", author: "Bhagavad Gita 16.01" },
+    { id: 21602, quote: "Nonviolence, truthfulness, absence of anger, renunciation, tranquility, aversion to slander, compassion to all beings, absence of greed, gentleness, modesty, and absence of fickleness are divine qualities.", author: "Bhagavad Gita 16.02" },
+    { id: 21621, quote: "Lust, anger, and greed are the three gates to hell that destroy the soul. Therefore, one should abandon these three.", author: "Bhagavad Gita 16.21" },
+    
+    // Chapter 17: Threefold Faith
+    { id: 21715, quote: "Austerity of the body consists of worship of God, priests, teachers, and wise persons, and also purity, honesty, celibacy, and nonviolence.", author: "Bhagavad Gita 17.14" },
+    { id: 21716, quote: "Austerity of speech consists of speaking words that are truthful, pleasing, beneficial, and not agitating to others, and also in regular study of scriptures.", author: "Bhagavad Gita 17.15" },
+    { id: 21717, quote: "Austerity of mind consists of serenity of mind, gentleness, silence, self-control, and purity of thought.", author: "Bhagavad Gita 17.16" },
+    
+    // Chapter 18: Liberation Through Renunciation
+    { id: 21837, quote: "The pleasure that appears as poison in the beginning but is like nectar in the end comes by the grace of Self-knowledge and is in the mode of goodness.", author: "Bhagavad Gita 18.37" },
+    { id: 21845, quote: "One can attain the highest perfection by devotion to one's natural work.", author: "Bhagavad Gita 18.45" },
+    { id: 21846, quote: "One attains perfection by worshipping the Supreme from whom all beings originate, and by whom all this universe is pervaded, through performance of one's natural duty.", author: "Bhagavad Gita 18.46" },
+    { id: 21848, quote: "One's natural work, even though defective, should not be abandoned because all undertakings are enveloped by defects as fire is covered by smoke.", author: "Bhagavad Gita 18.48" },
+    { id: 21854, quote: "By devotion one truly understands what and who I am in essence. Having known Me in essence, one immediately merges with Me.", author: "Bhagavad Gita 18.55" },
+    { id: 21856, quote: "A Karma-yogi attains the eternal abode by My grace, even while doing all duties, by dedicating all actions to Me with loving devotion.", author: "Bhagavad Gita 18.56" },
+    { id: 21863, quote: "Abandoning all duties and religions, just surrender unto Me alone. I shall liberate you from all sinful reactions. Do not worry.", author: "Bhagavad Gita 18.66" },
+    { id: 21866, quote: "One who studies this sacred dialogue of ours worships Me by the sacrifice of knowledge. This is My conviction.", author: "Bhagavad Gita 18.70" },
+    { id: 21878, quote: "Wherever there is Krishna and Arjuna, there will certainly be prosperity, victory, glory, and morality. This is my conviction.", author: "Bhagavad Gita 18.78" }
+];
+
+console.log(`Total Gita verses loaded: ${bhagavadGitaVerses.length}`);
+
+
         
         close.onclick = function(e) {
             e.stopPropagation();
