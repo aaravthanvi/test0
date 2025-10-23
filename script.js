@@ -1174,11 +1174,7 @@ try {
   });
 }
 
-        id: 3000 + combinedQuotes.length,
-        quote: txt,
-        author: `Bhagavad Gita ${ref}`
-      });
-    }
+     
     
   console.log("Gita verses loaded");
 } catch (err) {
