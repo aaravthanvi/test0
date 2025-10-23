@@ -1156,42 +1156,43 @@ console.log(`Total Gita verses loaded: ${bhagavadGitaVerses.length}`);
         };
     });
         
-// ============================================
-// BHAGAVAD GITA NAVIGATION
-// ============================================
 
-const gitaSection = document.getElementById('gita-section');
-const backFromGita = document.getElementById('back-from-gita');
-const gitaChapterBtns = document.querySelectorAll('.gita-chapter-btn');
-const browsePhilosophyBtn = document.getElementById('browse-philosophy-btn');
-const mainMenu = document.getElementById('main-menu');
-const quoteSection = document.getElementById('quote-section');
+// Bhagavad Gita Button in Philosophy Section
+const gitaBtnPhilosophy = document.getElementById('gita-btn-philosophy');
+if (gitaBtnPhilosophy) {
+    gitaBtnPhilosophy.addEventListener('click', () => {
+        document.getElementById('philosophy').classList.add('hidden');
+        document.getElementById('gita-section').classList.remove('hidden');
+    });
+}
 
-// When Philosophy button is clicked, show Gita section
-browsePhilosophyBtn.addEventListener('click', () => {
-    mainMenu.classList.add('hidden');
-    gitaSection.classList.remove('hidden');
-});
+// Chapter buttons functionality
+const gitaChapter1 = document.getElementById('gita-chapter-1');
+const gitaChapter2 = document.getElementById('gita-chapter-2');
 
-// Back button from Gita section to main menu
-backFromGita.addEventListener('click', () => {
-    gitaSection.classList.add('hidden');
-    mainMenu.classList.remove('hidden');
-});
-
-// When chapter button is clicked
-gitaChapterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Hide Gita section, show quote section
-        gitaSection.classList.add('hidden');
-        quoteSection.classList.remove('hidden');
+if (gitaChapter1) {
+    gitaChapter1.addEventListener('click', () => {
+        document.getElementById('gita-section').classList.add('hidden');
+        document.getElementById('quote-section').classList.remove('hidden');
         
-        // Load a random verse from Gita
+        // Show random Gita verse
         const randomVerse = bhagavadGitaVerses[Math.floor(Math.random() * bhagavadGitaVerses.length)];
         document.getElementById('quote-text').textContent = randomVerse.quote;
         document.getElementById('quote-author').querySelector('[itemprop="name"]').textContent = randomVerse.author;
     });
-});
+}
+
+if (gitaChapter2) {
+    gitaChapter2.addEventListener('click', () => {
+        document.getElementById('gita-section').classList.add('hidden');
+        document.getElementById('quote-section').classList.remove('hidden');
+        
+        // Show random Gita verse
+        const randomVerse = bhagavadGitaVerses[Math.floor(Math.random() * bhagavadGitaVerses.length)];
+        document.getElementById('quote-text').textContent = randomVerse.quote;
+        document.getElementById('quote-author').querySelector('[itemprop="name"]').textContent = randomVerse.author;
+    });
+}
 
     </script>
 </body>
