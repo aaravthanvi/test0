@@ -274,7 +274,8 @@ const categoryKeywords = {
     'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
     'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
     'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
-    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
+    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude'],
+    'bhagavad-gita': ['krishna', 'arjuna', 'dharma', 'karma', 'yoga', 'devotion', 'duty', 'soul', 'eternal', 'truth', 'righteousness', 'divine', 'vedic', 'gita', 'lord', 'wisdom', 'self', 'action']
 };
 
 const journeyDefinitions = {
