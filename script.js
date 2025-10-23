@@ -263,19 +263,18 @@ let zenEnabled = false;
 let zenCurrentStyle = 'particles';
 
 const categoryKeywords = {
-  'all': [],
-  'life': ['life', 'live', 'living', 'exist', 'journey', 'experience'],
-  'love': ['love', 'heart', 'compassion', 'kindness', 'care', 'affection'],
-  'success': ['success', 'achieve', 'goal', 'accomplish', 'win', 'victory'],
-  'inspire': ['inspire', 'inspiration', 'motivate', 'encourage', 'empower', 'aspire', 'dream', 'possibility', 'potential', 'greatness'],
-  'wisdom': ['wisdom', 'wise', 'knowledge', 'learn', 'understand', 'truth'],
-  'time': ['time', 'moment', 'past', 'future', 'present', 'today', 'tomorrow'],
-  'change': ['change', 'transform', 'grow', 'evolve', 'adapt', 'different'],
-  'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
-  'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
-  'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
-  'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude'], // ← comma added
-  'gita': ['gita', 'bhagavad', 'krishna', 'arjuna', 'dharma', 'karma', 'yoga', 'atma', 'detachment', 'duty', 'sattva', 'rajas', 'tamas'] // new
+    'all': [],
+    'life': ['life', 'live', 'living', 'exist', 'journey', 'experience'],
+    'love': ['love', 'heart', 'compassion', 'kindness', 'care', 'affection'],
+    'success': ['success', 'achieve', 'goal', 'accomplish', 'win', 'victory'],
+    'inspire': ['inspire', 'inspiration', 'motivate', 'encourage', 'empower', 'aspire', 'dream', 'possibility', 'potential', 'greatness'],
+    'wisdom': ['wisdom', 'wise', 'knowledge', 'learn', 'understand', 'truth'],
+    'time': ['time', 'moment', 'past', 'future', 'present', 'today', 'tomorrow'],
+    'change': ['change', 'transform', 'grow', 'evolve', 'adapt', 'different'],
+    'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
+    'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
+    'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
+    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
 };
 
 const journeyDefinitions = {
@@ -1140,38 +1139,7 @@ async function fetchAllQuotes() {
         } catch (err) {
             console.log('⚠️ ZenQuotes failed:', err);
         }
-
-        // API 4: Bhagavad Gita
-try {
-  const gitaRefs = ["2.47","4.7","3.19","12.15","18.66","9.22","6.5","8.7","2.50","3.30"];
-
-  for (const ref of gitaRefs) {
-    const res = await fetch(`https://api.bhagavadgitaapi.in/v1/verses/${ref}`);
-    if (!res.ok) continue;
-    const data = await res.json();
-
-    const txt = data?.translations?.find(t => /english/i.test(t?.language || ''))?.text || 
-                data?.translations?.[0]?.text || 
-                data?.verse || 
-                data?.slok || 
-                '';
-
-    if (txt) {
-      combinedQuotes.push({
-        id: 3000 + combinedQuotes.length,
-        quote: txt,
-        author: `Bhagavad Gita ${ref}`,
-        category: 'gita'
-      });
-    }
-  }
-      console.log('Gita verses loaded');
-} catch (err) {
-  console.log('Gita API failed', err);
-}
-
-
-
+        
         // Remove duplicates based on quote text
         const uniqueQuotes = [];
         const seenQuotes = new Set();
@@ -1221,49 +1189,44 @@ function loadCachedQuotes() {
 }
 
 function quoteMatchesCategory(quote, category) {
-  if (category === 'all') return true;
-  if (quote.category === category) return true; // respect explicit tag
-  const keywords = categoryKeywords[category] || [];
-  const quoteText = (quote.quote + ' ' + quote.author).toLowerCase();
-  return keywords.some(keyword => quoteText.includes(keyword.toLowerCase()));
+    if (category === 'all') return true;
+    
+    const keywords = categoryKeywords[category] || [category];
+    const quoteText = quote.quote.toLowerCase();
+    
+    return keywords.some(keyword => quoteText.includes(keyword.toLowerCase()));
 }
-
 
 function showQuoteFromCategory() {
-  let filteredQuotes;
-
-  // Special strict mode for Bhagavad Gita
-  if (currentCategory === 'gita') {
-    filteredQuotes = allQuotes.filter(q => q.category === 'gita');
-    if (filteredQuotes.length === 0) {
-      quoteText.textContent = 'No Bhagavad Gita verses loaded yet.';
-      quoteAuthor.textContent = '';
-      return;
+    let filteredQuotes;
+    
+    if (currentCategory === 'all') {
+        filteredQuotes = allQuotes;
+    } else {
+        filteredQuotes = allQuotes.filter(q => quoteMatchesCategory(q, currentCategory));
+        
+        if (filteredQuotes.length < 10) {
+            filteredQuotes = allQuotes;
+            statusMessage.innerHTML = '<i class="fas fa-sparkles mr-2"></i>Showing all quotes for variety';
+        }
     }
-  } else if (currentCategory === 'all') {
-    filteredQuotes = allQuotes;
-  } else {
-    filteredQuotes = allQuotes.filter(q => quoteMatchesCategory(q, currentCategory));
-    if (filteredQuotes.length < 10) {
-      filteredQuotes = allQuotes;
-      statusMessage.innerHTML = '<i class="fas fa-sparkles mr-2"></i>Showing all quotes for variety';
+    
+    const availableQuotes = filteredQuotes.filter(q => !shownQuoteIds.includes(q.id));
+    
+    if (availableQuotes.length === 0) {
+        shownQuoteIds = [];
+        saveShownQuotes();
+        return showQuoteFromCategory();
     }
-  }
-
-  const availableQuotes = filteredQuotes.filter(q => !shownQuoteIds.includes(q.id));
-  if (availableQuotes.length === 0) {
-    shownQuoteIds = [];
+    
+    const randomIndex = Math.floor(Math.random() * availableQuotes.length);
+    const selectedQuote = availableQuotes[randomIndex];
+    
+    shownQuoteIds.push(selectedQuote.id);
     saveShownQuotes();
-    return showQuoteFromCategory();
-  }
-  const randomIndex = Math.floor(Math.random() * availableQuotes.length);
-  const selectedQuote = availableQuotes[randomIndex];
-  shownQuoteIds.push(selectedQuote.id);
-  saveShownQuotes();
-  displayQuote(selectedQuote);
+    
+    displayQuote(selectedQuote);
 }
-
-
 
 async function displayQuote(quote, isLanguageSwitch = false) {
     currentQuoteData = quote;
