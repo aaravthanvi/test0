@@ -1141,45 +1141,36 @@ async function fetchAllQuotes() {
             console.log('⚠️ ZenQuotes failed:', err);
         }
 
-        // API 4: Bhagavad Gita — load a small set of famous references (chapter.verse)
+        // API 4: Bhagavad Gita
 try {
-  const gitaRefs = ["2.47","4.7","3.19","12.15","18.66","9.22","6.5","8.7","2.50","3.30"]; // add more later
-
-  // Set this base from the API you choose (see docs):
-  // Option: Open-source Shrimad Bhagavad Gita API (pattern v1/verses/{chapter.verse})
-  // Option: BhagavadGita.io (needs API key)
-  // Option: RapidAPI Bhagavad Gita3 (needs RapidAPI key)
-  const GITA_BASE = "SET_THIS_FROM_CHOSEN_API_DOCS";
+  const gitaRefs = ["2.47","4.7","3.19","12.15","18.66","9.22","6.5","8.7","2.50","3.30"];
 
   for (const ref of gitaRefs) {
-    const url = `${GITA_BASE}/v1/verses/${ref}`; // endpoint pattern per public docs
-    const res = await fetch(url /* add headers here if your chosen API requires a key */);
+    const res = await fetch(`https://api.bhagavadgitaapi.in/v1/verses/${ref}`);
     if (!res.ok) continue;
     const data = await res.json();
 
-    // Pick the best available English text field
-    const txt =
-      data?.translations?.find(t => /english/i.test(t?.language || ""))?.text ||
-      data?.translations?.[0]?.text ||
-      data?.verse || // some APIs
-      data?.slok ||  // some APIs
-      "";
+    const txt = data?.translations?.find(t => /english/i.test(t?.language || ''))?.text || 
+                data?.translations?.[0]?.text || 
+                data?.verse || 
+                data?.slok || 
+                '';
 
-   if (txt) {
-  combinedQuotes.push({
-    id: 3000 + combinedQuotes.length,
-    quote: txt,
-    author: `Bhagavad Gita ${ref}`,
-    category: 'gita'
-  });
-}
-
-     
-    
-  console.log("Gita verses loaded");
+    if (txt) {
+      combinedQuotes.push({
+        id: 3000 + combinedQuotes.length,
+        quote: txt,
+        author: `Bhagavad Gita ${ref}`,
+        category: 'gita'
+      });
+    }
+  }
+      console.log('Gita verses loaded');
 } catch (err) {
-  console.log("Gita API failed", err);
+  console.log('Gita API failed', err);
 }
+
+
 
         // Remove duplicates based on quote text
         const uniqueQuotes = [];
