@@ -1165,14 +1165,21 @@ try {
       data?.slok ||  // some APIs
       "";
 
-    if (txt) {
-      combinedQuotes.push({
+   if (txt) {
+  combinedQuotes.push({
+    id: 3000 + combinedQuotes.length,
+    quote: txt,
+    author: `Bhagavad Gita ${ref}`,
+    category: 'gita'
+  });
+}
+
         id: 3000 + combinedQuotes.length,
         quote: txt,
         author: `Bhagavad Gita ${ref}`
       });
     }
-  }
+    
   console.log("Gita verses loaded");
 } catch (err) {
   console.log("Gita API failed", err);
@@ -1227,44 +1234,49 @@ function loadCachedQuotes() {
 }
 
 function quoteMatchesCategory(quote, category) {
-    if (category === 'all') return true;
-    
-    const keywords = categoryKeywords[category] || [category];
-    const quoteText = quote.quote.toLowerCase();
-    
-    return keywords.some(keyword => quoteText.includes(keyword.toLowerCase()));
+  if (category === 'all') return true;
+  if (quote.category === category) return true; // respect explicit tag
+  const keywords = categoryKeywords[category] || [];
+  const quoteText = (quote.quote + ' ' + quote.author).toLowerCase();
+  return keywords.some(keyword => quoteText.includes(keyword.toLowerCase()));
 }
 
+
 function showQuoteFromCategory() {
-    let filteredQuotes;
-    
-    if (currentCategory === 'all') {
-        filteredQuotes = allQuotes;
-    } else {
-        filteredQuotes = allQuotes.filter(q => quoteMatchesCategory(q, currentCategory));
-        
-        if (filteredQuotes.length < 10) {
-            filteredQuotes = allQuotes;
-            statusMessage.innerHTML = '<i class="fas fa-sparkles mr-2"></i>Showing all quotes for variety';
-        }
+  let filteredQuotes;
+
+  // Special strict mode for Bhagavad Gita
+  if (currentCategory === 'gita') {
+    filteredQuotes = allQuotes.filter(q => q.category === 'gita');
+    if (filteredQuotes.length === 0) {
+      quoteText.textContent = 'No Bhagavad Gita verses loaded yet.';
+      quoteAuthor.textContent = '';
+      return;
     }
-    
-    const availableQuotes = filteredQuotes.filter(q => !shownQuoteIds.includes(q.id));
-    
-    if (availableQuotes.length === 0) {
-        shownQuoteIds = [];
-        saveShownQuotes();
-        return showQuoteFromCategory();
+  } else if (currentCategory === 'all') {
+    filteredQuotes = allQuotes;
+  } else {
+    filteredQuotes = allQuotes.filter(q => quoteMatchesCategory(q, currentCategory));
+    if (filteredQuotes.length < 10) {
+      filteredQuotes = allQuotes;
+      statusMessage.innerHTML = '<i class="fas fa-sparkles mr-2"></i>Showing all quotes for variety';
     }
-    
-    const randomIndex = Math.floor(Math.random() * availableQuotes.length);
-    const selectedQuote = availableQuotes[randomIndex];
-    
-    shownQuoteIds.push(selectedQuote.id);
+  }
+
+  const availableQuotes = filteredQuotes.filter(q => !shownQuoteIds.includes(q.id));
+  if (availableQuotes.length === 0) {
+    shownQuoteIds = [];
     saveShownQuotes();
-    
-    displayQuote(selectedQuote);
+    return showQuoteFromCategory();
+  }
+  const randomIndex = Math.floor(Math.random() * availableQuotes.length);
+  const selectedQuote = availableQuotes[randomIndex];
+  shownQuoteIds.push(selectedQuote.id);
+  saveShownQuotes();
+  displayQuote(selectedQuote);
 }
+
+
 
 async function displayQuote(quote, isLanguageSwitch = false) {
     currentQuoteData = quote;
