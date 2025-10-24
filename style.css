@@ -291,3 +291,19 @@ body {
     color: #1a1a1a !important;
 } 
 
+/* Force buttons to be clickable */
+.action-btn,
+.category-btn,
+button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Make sure no overlays are blocking */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
