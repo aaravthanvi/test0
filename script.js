@@ -508,8 +508,7 @@ const curatedQuotes = [
  { id: 10196, quote: "The divine spark resides in the heart of every living being.", author: "Lord Krishna" },
  { id: 10197, quote: "One who has conquered the mind has conquered the world.", author: "Lord Krishna" },
  { id: 10198, quote: "Live with integrity, courage, and compassion in all circumstances.", author: "Lord Krishna" },
- { id: 10199, quote: "Remember always: You are eternal, immortal, and divine in nature." , author: "Lord Krishna" }
-];
+{ id: 10199, quote: "Remember always: You are eternal, immortal, and divine in nature.", author: "Lord Krishna" }
 
 // ============================================
 // ZEN BACKGROUND SYSTEM
