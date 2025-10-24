@@ -1357,15 +1357,21 @@ function showQuoteFromCategory() {
     // SPECIAL HANDLING FOR BHAGAVAD GITA
     if (currentCategory === 'geeta') {
         // Only show Bhagavad Gita quotes (IDs 20001 and above)
-        filteredQuotes = allQuotes.filter(q => 
-            q.id >= 20001 && q.author.includes('Bhagavad Gita')
-        );
-        
-        if (filteredQuotes.length === 0) {
-            statusMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>No Geeta verses found';
-            return;
-        }
-    } 
+      if (currentCategory === 'geeta') {
+    // Filter for Bhagavad Gita quotes
+    filteredQuotes = allQuotes.filter(q => {
+        return q.id >= 20001 && q.author && q.author.includes('Bhagavad Gita');
+    });
+    
+    console.log('Geeta verses found:', filteredQuotes.length); // Debug line
+    
+    if (filteredQuotes.length === 0) {
+        statusMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>No Geeta verses found. Total quotes: ' + allQuotes.length;
+        console.log('All quotes:', allQuotes.slice(0, 5)); // Debug line
+        return;
+    }
+}
+
     // SPECIAL HANDLING FOR STOICISM
     else if (currentCategory === 'stoicism') {
         filteredQuotes = allQuotes.filter(q => 
