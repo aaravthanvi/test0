@@ -1661,7 +1661,7 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 // EVENT LISTENERS
 // ============================================
-
+document.addEventListener('DOMContentLoaded', () => {
 browseCategoriesBtn.addEventListener('click', showCategoriesSection);
 browseAuthorsBtn.addEventListener('click', showAuthorsSection);
 browsePhilosophyBtn.addEventListener('click', showPhilosophySection);
@@ -1856,6 +1856,7 @@ setTheme = function(name) {
 // Run on load
 
 applySettingsContrast();
+}); // End of DOMContentLoaded
 
 
 
