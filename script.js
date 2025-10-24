@@ -1856,3 +1856,50 @@ setTheme = function(name) {
 // Run on load
 
 applySettingsContrast();
+
+// EMERGENCY FIX - Force philosophy buttons to work
+setTimeout(function() {
+    console.log('🔧 Fixing philosophy buttons...');
+    
+    const philBtns = document.querySelectorAll('.philosophy-btn');
+    console.log('Found philosophy buttons:', philBtns.length);
+    
+    philBtns.forEach(function(btn) {
+        btn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const philosophy = this.getAttribute('data-philosophy');
+            console.log('Philosophy clicked:', philosophy);
+            
+            // Set category
+            currentCategory = philosophy;
+            currentAuthor = '';
+            
+            // Load shown quotes
+            try {
+                const key = `shownQuotes_${currentCategory}`;
+                const shown = localStorage.getItem(key);
+                shownQuoteIds = shown ? JSON.parse(shown) : [];
+            } catch (e) {
+                shownQuoteIds = [];
+            }
+            
+            // Hide philosophy section
+            document.getElementById('philosophy').classList.add('hidden');
+            
+            // Show quote section
+            document.getElementById('quote-section').classList.remove('hidden');
+            
+            // Load quotes
+            if (allQuotes.length > 0) {
+                showQuoteFromCategory();
+            } else {
+                fetchAllQuotes();
+            }
+        };
+    });
+    
+    console.log('✅ Philosophy buttons fixed!');
+}, 1000);
+
