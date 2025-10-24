@@ -556,7 +556,7 @@ const curatedQuotes = [
     
     { id: 20104, quote: "The Spirit is said to be unexplainable, incomprehensible, and unchanging. Knowing this Spirit as such, you should not grieve.", author: "Bhagavad Gita 2.25" },
     { id: 20105, quote: "All beings are unmanifest before birth and after death. They manifest between the birth and the death only. What is there to grieve about?", author: "Bhagavad Gita 2.28" },
-    // ... [Continue with 395+ more verses to complete 500 total]
+   
 
 ];
 
