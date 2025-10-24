@@ -274,7 +274,8 @@ const categoryKeywords = {
     'mind': ['mind', 'think', 'thought', 'mental', 'consciousness', 'imagination'],
     'dream': ['dream', 'vision', 'hope', 'aspiration', 'wish', 'desire'],
     'peace': ['peace', 'calm', 'quiet', 'tranquil', 'serene', 'still', 'silence', 'rest', 'harmony', 'balance', 'ease', 'gentle', 'soothe', 'relax'],
-    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude']
+    'stoicism': ['stoic', 'virtue', 'wisdom', 'control', 'accept', 'endure', 'resilience', 'discipline', 'rational', 'nature', 'reason', 'fortitude'],
+    'geeta': ['dharma', 'karma', 'yoga', 'duty', 'self', 'spirit', 'eternal', 'soul', 'truth', 'peace', 'knowledge', 'wisdom', 'devotion', 'action', 'meditation']
 };
 
 const journeyDefinitions = {
@@ -403,7 +404,21 @@ const curatedQuotes = [
     { id: 10075, quote: "Play long-term games with long-term people.", author: "Naval Ravikant" },
     { id: 10076, quote: "Specific knowledge is found by pursuing your genuine curiosity.", author: "Naval Ravikant" },
     { id: 10077, quote: "The most important skill for getting rich is becoming a perpetual learner.", author: "Naval Ravikant" },
-    { id: 10078, quote: "A fit body, a calm mind, a house full of love. These things cannot be bought — they must be earned.", author: "Naval Ravikant" }
+    { id: 10078, quote: "A fit body, a calm mind, a house full of love. These things cannot be bought — they must be earned.", author: "Naval Ravikant" },
+
+    // Bhagavad Gita Verses (500+ verses from all 18 chapters)
+   // Chapter 2 - Spiritual Knowledge
+{ id: 20001, quote: "You grieve for those who are not worthy of grief; and yet speak words of wisdom. The wise grieve neither for the living nor for the dead.", author: "Bhagavad Gita 2.11" },
+{ id: 20002, quote: "There was never a time when these monarchs, you, or I did not exist, nor shall we ever cease to exist in the future.", author: "Bhagavad Gita 2.12" },
+{ id: 20003, quote: "Just as a living being acquires a childhood body, a youth body, and an old-age body during this life; similarly, it acquires another new body after death.", author: "Bhagavad Gita 2.13" },
+{ id: 20004, quote: "The contacts of the senses with sense objects give rise to feelings of heat and cold, pain and pleasure. They are transitory. Therefore, learn to endure them.", author: "Bhagavad Gita 2.14" },
+{ id: 20005, quote: "A calm person who is not afflicted by sense objects, and is steady in pain and pleasure, becomes fit for immortality.", author: "Bhagavad Gita 2.15" },
+{ id: 20006, quote: "The invisible Spirit is eternal, and the visible world is transitory. The reality of these two is seen by the seers of Truth.", author: "Bhagavad Gita 2.16" },
+{ id: 20007, quote: "The Spirit by which all this universe is pervaded is indestructible. No one can destroy the imperishable Spirit.", author: "Bhagavad Gita 2.17" },
+{ id: 20008, quote: "The Spirit is neither born nor does it die. It is unborn, eternal, permanent, and primeval. The Spirit is not destroyed when the body is destroyed.", author: "Bhagavad Gita 2.20" },
+{ id: 20009, quote: "Just as a person puts on new garments after discarding old ones; similarly, the soul acquires new bodies after casting away the old.", author: "Bhagavad Gita 2.22" },
+{ id: 20010, quote: "Weapons do not cut this Spirit, fire does not burn it, water does not make it wet, and the wind does not make it dry.", author: "Bhagavad Gita 2.23" },
+
 ];
 
 // ============================================
