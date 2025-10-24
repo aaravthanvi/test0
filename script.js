@@ -1669,4 +1669,3 @@ setTheme = function(name) {
 
 // Run on load
 applySettingsContrast();
-
