@@ -1577,14 +1577,23 @@ backBtn.addEventListener('click', () => {
 });
 
 newQuoteBtn.addEventListener('click', () => {
-    if (currentJourney) {
-        nextJourneyQuote();
-    } else if (currentAuthor) {
-        showQuotesByAuthor();
-    } else if (allQuotes.length > 0) {
-        showQuoteFromCategory();
+    // Check if we can move forward in history
+    if (currentQuoteIndex < quoteHistory.length - 1) {
+        currentQuoteIndex++;
+        const nextQuote = quoteHistory[currentQuoteIndex];
+        displayQuote(nextQuote);
+        updatePrevButtonState();
     } else {
-        fetchAllQuotes();
+        // Get a new quote
+        if (currentJourney) {
+            nextJourneyQuote();
+        } else if (currentAuthor) {
+            showQuotesByAuthor();
+        } else if (allQuotes.length > 0) {
+            showQuoteFromCategory();
+        } else {
+            fetchAllQuotes();
+        }
     }
 });
 
