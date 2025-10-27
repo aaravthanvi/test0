@@ -18,6 +18,7 @@ const translations = {
         'cat-dream': 'Dreams',
         'cat-peace': 'Peace',
         back: 'Back',
+        'prev-quote': 'Previous',
         'new-quote': 'Next',
         share: 'Share',
         voice: 'Listen',
@@ -33,9 +34,9 @@ const translations = {
     hi: {
         title: 'कोट गैलेक्सी',
         subtitle: 'दुनिया भर से ज्ञान की खोज करें',
-        'cat-all': 'सभी उद्धरण',
+        'cat-all': 'सभी कोट्स',
         'cat-life': 'जीवन',
-        'cat-love': 'प्रेम',
+        'cat-love': 'प्यार',
         'cat-success': 'सफलता',
         'cat-inspire': 'प्रेरणा',
         'cat-wisdom': 'ज्ञान',
@@ -45,17 +46,18 @@ const translations = {
         'cat-dream': 'सपने',
         'cat-peace': 'शांति',
         back: 'वापस',
+        'prev-quote': 'पिछला',
         'new-quote': 'अगला',
-        share: 'साझा करें',
+        share: 'शेयर',
         voice: 'सुनें',
         loading: 'लोड हो रहा है...',
-        offline: 'ऑफ़लाइन मोड',
-        copied: 'कॉपी किया गया!',
-        viewed: 'उद्धरण देखे',
-        reading: 'पढ़ रहे हैं...',
-        stopped: 'रुका',
-        translating: 'अनुवाद...',
-        journeyComplete: 'यात्रा पूर्ण!'
+        offline: 'ऑफलाइन मोड',
+        copied: 'कॉपी हो गया!',
+        viewed: 'कोट्स देखे गए',
+        reading: 'पढ़ा जा रहा है...',
+        stopped: 'रोका गया',
+        translating: 'अनुवाद हो रहा है...',
+        journeyComplete: 'यात्रा पूरी हुई!'
     },
     es: {
         title: 'Quote Galaxy',
@@ -72,17 +74,18 @@ const translations = {
         'cat-dream': 'Sueños',
         'cat-peace': 'Paz',
         back: 'Atrás',
+        'prev-quote': 'Anterior',
         'new-quote': 'Siguiente',
         share: 'Compartir',
         voice: 'Escuchar',
         loading: 'Cargando...',
         offline: 'Sin conexión',
-        copied: '¡Copiado!',
+        copied: 'Copiado!',
         viewed: 'citas vistas',
         reading: 'Leyendo...',
         stopped: 'Detenido',
         translating: 'Traduciendo...',
-        journeyComplete: '¡Viaje completo!'
+        journeyComplete: 'Viaje completo!'
     },
     fr: {
         title: 'Quote Galaxy',
@@ -99,6 +102,7 @@ const translations = {
         'cat-dream': 'Rêves',
         'cat-peace': 'Paix',
         back: 'Retour',
+        'prev-quote': 'Précédent',
         'new-quote': 'Suivant',
         share: 'Partager',
         voice: 'Écouter',
@@ -126,6 +130,7 @@ const translations = {
         'cat-dream': 'Träume',
         'cat-peace': 'Frieden',
         back: 'Zurück',
+        'prev-quote': 'Vorherige',
         'new-quote': 'Weiter',
         share: 'Teilen',
         voice: 'Anhören',
@@ -140,12 +145,12 @@ const translations = {
     },
     ja: {
         title: 'Quote Galaxy',
-        subtitle: '世界中の知恵を探求',
+        subtitle: '世界中の知恵を探索',
         'cat-all': 'すべて',
         'cat-life': '人生',
         'cat-love': '愛',
         'cat-success': '成功',
-        'cat-inspire': '感動',
+        'cat-inspire': 'インスピレーション',
         'cat-wisdom': '知恵',
         'cat-time': '時間',
         'cat-change': '変化',
@@ -153,21 +158,22 @@ const translations = {
         'cat-dream': '夢',
         'cat-peace': '平和',
         back: '戻る',
+        'prev-quote': '前へ',
         'new-quote': '次へ',
-        share: '共有',
-        voice: '聞く',
+        share: 'シェア',
+        voice: '聴く',
         loading: '読み込み中...',
         offline: 'オフライン',
-        copied: 'コピー済み!',
+        copied: 'コピーしました!',
         viewed: '引用',
         reading: '読み上げ中...',
         stopped: '停止',
         translating: '翻訳中...',
-        journeyComplete: '旅完了！'
+        journeyComplete: '完了'
     },
     zh: {
         title: 'Quote Galaxy',
-        subtitle: '探索智慧',
+        subtitle: '探索世界智慧',
         'cat-all': '全部',
         'cat-life': '生活',
         'cat-love': '爱',
@@ -175,24 +181,26 @@ const translations = {
         'cat-inspire': '灵感',
         'cat-wisdom': '智慧',
         'cat-time': '时间',
-        'cat-change': '变化',
-        'cat-mind': '思维',
+        'cat-change': '改变',
+        'cat-mind': '心灵',
         'cat-dream': '梦想',
         'cat-peace': '和平',
         back: '返回',
+        'prev-quote': '上一个',
         'new-quote': '下一个',
         share: '分享',
         voice: '听',
         loading: '加载中...',
-        offline: '离线',
-        copied: '已复制！',
-        viewed: '引语',
+        offline: '离线模式',
+        copied: '已复制',
+        viewed: '引用',
         reading: '朗读中...',
         stopped: '已停止',
         translating: '翻译中...',
-        journeyComplete: '旅程完成！'
+        journeyComplete: '完成'
     }
 };
+
 
 const languageCodes = {
     'en': 'en', 'hi': 'hi', 'es': 'es', 'fr': 'fr', 'de': 'de', 'ja': 'ja', 'zh': 'zh'
@@ -214,6 +222,7 @@ const statusMessage = document.getElementById('status-message');
 const quoteContainer = document.getElementById('quote-container');
 const backBtn = document.getElementById('back-btn');
 const newQuoteBtn = document.getElementById('new-quote-btn');
+const prevQuoteBtn = document.getElementById('prev-quote-btn');
 const shareBtn = document.getElementById('share-btn');
 const voiceBtn = document.getElementById('voice-btn');
 const storyCardBtn = document.getElementById('story-card-btn');
@@ -252,6 +261,8 @@ let journeyCurrentIndex = 0;
 let allQuotes = [];
 let topAuthors = [];
 let shownQuoteIds = [];
+let quoteHistory = [];
+let currentQuoteIndex = -1;
 let currentLanguage = 'en';
 let easterEggInput = '';
 let deferredPrompt = null;
@@ -1230,6 +1241,14 @@ function showQuoteFromCategory() {
 
 async function displayQuote(quote, isLanguageSwitch = false) {
     currentQuoteData = quote;
+
+        // Add to history if it's a new quote (not navigating back)
+    if (currentQuoteIndex === quoteHistory.length - 1 || currentQuoteIndex === -1) {
+        quoteHistory.push(quote);
+        currentQuoteIndex = quoteHistory.length - 1;
+    }
+    updatePrevButtonState();
+
     
     quoteContainer.classList.remove('quote-reveal');
     void quoteContainer.offsetWidth;
@@ -1432,7 +1451,11 @@ document.addEventListener('keydown', (e) => {
             showMainMenu();
         }
     }
-    
+    if ((e.key === 'p' || e.key === 'P') && !quoteSection.classList.contains('hidden')) {
+    e.preventDefault();
+    showPreviousQuote();
+}
+
     if ((e.key === ' ' || e.key === 'n' || e.key === 'N') && !quoteSection.classList.contains('hidden')) {
         e.preventDefault();
         if (currentJourney) {
@@ -1521,6 +1544,28 @@ journeyCards.forEach((card) => {
     });
 });
 
+function showPreviousQuote() {
+    if (currentQuoteIndex > 0) {
+        currentQuoteIndex--;
+        const previousQuote = quoteHistory[currentQuoteIndex];
+        displayQuote(previousQuote);
+        updatePrevButtonState();
+    }
+}
+
+function updatePrevButtonState() {
+    if (currentQuoteIndex <= 0) {
+        prevQuoteBtn.disabled = true;
+        prevQuoteBtn.style.opacity = '0.5';
+        prevQuoteBtn.style.cursor = 'not-allowed';
+    } else {
+        prevQuoteBtn.disabled = false;
+        prevQuoteBtn.style.opacity = '1';
+        prevQuoteBtn.style.cursor = 'pointer';
+    }
+}
+
+
 backBtn.addEventListener('click', () => {
     if (currentJourney) {
         showJourneysSection();
@@ -1542,6 +1587,9 @@ newQuoteBtn.addEventListener('click', () => {
         fetchAllQuotes();
     }
 });
+
+prevQuoteBtn.addEventListener('click', showPreviousQuote);
+
 
 shareBtn.addEventListener('click', shareQuote);
 voiceBtn.addEventListener('click', speakQuote);
